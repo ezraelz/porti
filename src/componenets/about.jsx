@@ -1,22 +1,103 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faDownload, faCode, faPalette, faServer, faDatabase } from '@fortawesome/free-solid-svg-icons';
-import proPic from '../static/img/propic.jpg';
+import { 
+  faTimes, 
+  faDownload, 
+  faCode, 
+  faPalette, 
+  faServer, 
+  faDatabase,
+  faRocket,
+  faLightbulb,
+  faUsers,
+  faChartLine,
+  faGlobe,
+  faGraduationCap,
+  faBriefcase,
+  faAward,
+  faHeart,
+  faCertificate,
+  faHandshake,
+  faCogs,
+  faMobile,
+  faCloud
+} from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [activeSkill, setActiveSkill] = useState(null);
+    const [activeTab, setActiveTab] = useState('skills');
 
     // Skills data
     const skills = [
-        { name: 'HTML', percentage: 95, icon: faCode, color: 'from-orange-500 to-red-500' },
-        { name: 'CSS', percentage: 90, icon: faPalette, color: 'from-blue-500 to-cyan-500' },
-        { name: 'React', percentage: 80, icon: faCode, color: 'from-cyan-500 to-blue-500' },
-        { name: 'Django', percentage: 90, icon: faServer, color: 'from-green-500 to-emerald-500' },
-        { name: 'JavaScript', percentage: 85, icon: faCode, color: 'from-yellow-500 to-orange-500' },
-        { name: 'Tailwind CSS', percentage: 95, icon: faPalette, color: 'from-teal-500 to-cyan-500' },
-        { name: 'Python', percentage: 88, icon: faCode, color: 'from-blue-500 to-indigo-500' },
-        { name: 'PostgreSQL', percentage: 75, icon: faDatabase, color: 'from-blue-400 to-blue-600' }
+        { name: 'HTML5', percentage: 95, icon: faCode, color: 'from-orange-500 to-red-500', category: 'frontend' },
+        { name: 'CSS3/SCSS', percentage: 90, icon: faPalette, color: 'from-blue-500 to-cyan-500', category: 'frontend' },
+        { name: 'JavaScript', percentage: 85, icon: faCode, color: 'from-yellow-500 to-orange-500', category: 'frontend' },
+        { name: 'React.js', percentage: 80, icon: faCode, color: 'from-cyan-500 to-blue-500', category: 'frontend' },
+        { name: 'Next.js', percentage: 75, icon: faRocket, color: 'from-gray-500 to-gray-800', category: 'frontend' },
+        { name: 'Tailwind CSS', percentage: 95, icon: faPalette, color: 'from-teal-500 to-cyan-500', category: 'frontend' },
+        { name: 'Django', percentage: 90, icon: faServer, color: 'from-green-500 to-emerald-500', category: 'backend' },
+        { name: 'Python', percentage: 88, icon: faCode, color: 'from-blue-500 to-indigo-500', category: 'backend' },
+        { name: 'PostgreSQL', percentage: 75, icon: faDatabase, color: 'from-blue-400 to-blue-600', category: 'database' },
+        { name: 'MongoDB', percentage: 70, icon: faDatabase, color: 'from-green-400 to-green-600', category: 'database' },
+        { name: 'React Native', percentage: 75, icon: faMobile, color: 'from-indigo-500 to-purple-500', category: 'mobile' },
+        { name: 'AWS', percentage: 65, icon: faCloud, color: 'from-orange-400 to-orange-600', category: 'devops' }
+    ];
+
+    // Experience timeline
+    const experience = [
+        {
+            year: '2024 - Present',
+            title: 'Senior Fullstack Developer',
+            company: 'Freelance & Contract',
+            description: 'Leading development of complex web applications and mentoring junior developers',
+            achievements: ['Built 15+ production applications', 'Improved performance by 40%', 'Implemented CI/CD pipelines']
+        },
+        {
+            year: '2022 - 2024',
+            title: 'Fullstack Developer',
+            company: 'Tech Solutions Inc.',
+            description: 'Developed and maintained web applications for various clients',
+            achievements: ['Reduced load times by 60%', 'Increased user engagement by 35%', 'Integrated 10+ third-party APIs']
+        },
+        {
+            year: '2021 - 2022',
+            title: 'Frontend Developer',
+            company: 'Digital Agency',
+            description: 'Created responsive websites and user interfaces',
+            achievements: ['Built 20+ responsive websites', 'Implemented design systems', 'Improved accessibility scores']
+        }
+    ];
+
+    // Education
+    const education = [
+        {
+            degree: 'BSc in Computer Science',
+            institution: 'University of Technology',
+            year: '2018 - 2022',
+            description: 'Specialized in software engineering and web technologies'
+        },
+        {
+            degree: 'Fullstack Development Bootcamp',
+            institution: 'Tech Academy',
+            year: '2020',
+            description: 'Intensive training in modern web development'
+        }
+    ];
+
+    // Certifications
+    const certifications = [
+        { name: 'AWS Certified Developer', issuer: 'Amazon Web Services', year: '2023' },
+        { name: 'React Professional Certificate', issuer: 'Meta', year: '2022' },
+        { name: 'Python Django Specialist', issuer: 'Django Software Foundation', year: '2022' }
+    ];
+
+    // Personal traits
+    const traits = [
+        { icon: faLightbulb, title: 'Problem Solver', description: 'Creative approach to technical challenges' },
+        { icon: faUsers, title: 'Team Player', description: 'Collaborative and communicative' },
+        { icon: faChartLine, title: 'Results-Driven', description: 'Focus on measurable outcomes' },
+        { icon: faHeart, title: 'Passionate', description: 'Love for coding and innovation' }
     ];
 
     const scrollToContact = () => {
@@ -36,7 +117,6 @@ const About = () => {
             <div className="relative group">
                 <div className="relative w-48 h-48 mx-auto">
                     <svg className="w-full h-full transform -rotate-90" viewBox="0 0 200 200">
-                        {/* Background circle */}
                         <circle
                             cx="100"
                             cy="100"
@@ -45,12 +125,11 @@ const About = () => {
                             strokeWidth="12"
                             fill="transparent"
                         />
-                        {/* Progress circle */}
                         <circle
                             cx="100"
                             cy="100"
                             r={radius}
-                            stroke={`url(#${skill.toLowerCase()}-gradient)`}
+                            stroke={`url(#${skill.toLowerCase().replace(/\s+/g, '-')}-gradient)`}
                             strokeWidth="12"
                             fill="transparent"
                             strokeDasharray={circumference}
@@ -58,9 +137,8 @@ const About = () => {
                             strokeLinecap="round"
                             className="transition-all duration-1000 ease-out"
                         />
-                        {/* Gradient definition */}
                         <defs>
-                            <linearGradient id={`${skill.toLowerCase()}-gradient`} x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id={`${skill.toLowerCase().replace(/\s+/g, '-')}-gradient`} x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" stopColor="#f59e0b" />
                                 <stop offset="50%" stopColor="#ea580c" />
                                 <stop offset="100%" stopColor="#3b82f6" />
@@ -68,7 +146,6 @@ const About = () => {
                         </defs>
                     </svg>
                     
-                    {/* Center content */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                         <div className={`text-4xl font-bold bg-gradient-to-r ${color} bg-clip-text text-transparent`}>
                             {percentage}%
@@ -81,42 +158,93 @@ const About = () => {
                     </div>
                 </div>
                 
-                {/* Hover effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-blue-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
             </div>
         );
     };
 
+    // Skill categories
+    const skillCategories = ['all', 'frontend', 'backend', 'database', 'mobile', 'devops'];
+    const filteredSkills = activeTab === 'all' 
+        ? skills 
+        : skills.filter(skill => skill.category === activeTab);
+
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
+        <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-900 to-black">
             {/* Hero Section */}
-            <section className="relative py-20">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5" />
+            <section className="relative pt-20 pb-32 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-transparent to-blue-500/10" />
                 <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-                            About <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Me</span>
+                    <div className="text-center max-w-4xl mx-auto mb-16">
+                        <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30">
+                            <FontAwesomeIcon icon={faRocket} className="text-yellow-500" />
+                            <span className="text-yellow-400 text-sm font-medium">About Me</span>
+                        </div>
+                        
+                        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                            Crafting <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 bg-clip-text text-transparent animate-gradient">Digital Excellence</span>
                         </h1>
-                        <p className="text-gray-400 text-lg">
-                            Learn more about my journey, skills, and expertise
+                        
+                        <p className="text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+                            A passionate Fullstack Developer with expertise in creating innovative digital 
+                            solutions that drive business growth and deliver exceptional user experiences.
                         </p>
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        {/* Profile Image */}
+                        {/* Profile Card */}
                         <div className="relative group">
                             <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500 via-orange-500 to-blue-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
                             <div className="relative">
-                                <div className="rounded-2xl overflow-hidden border-4 border-gray-800">
-                                    <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                                        <div className="text-center p-8">
-                                            <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-yellow-500/20 to-blue-500/20 flex items-center justify-center mb-6">
-                                                <div className="w-40 h-40 rounded-full bg-gray-800 flex items-center justify-center">
-                                                    <span className="text-4xl"><img src={proPic} alt="" /></span>
+                                <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-4 border-gray-800 overflow-hidden">
+                                    <div className="p-8">
+                                        <div className="flex flex-col items-center text-center">
+                                            <div className="relative mb-6">
+                                                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-yellow-500/20 to-blue-500/20 p-1">
+                                                    <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
+                                                        <div className="w-44 h-44 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                                                            <div className="text-center">
+                                                                <div className="text-5xl mb-2">👨‍💻</div>
+                                                                <div className="text-yellow-400 font-bold">Esrael Z.</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="absolute -bottom-2 -right-2 animate-float">
+                                                    <div className="px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold shadow-lg">
+                                                        Available
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <h3 className="text-2xl font-bold text-white">Esrael Zerihun</h3>
-                                            <p className="text-gray-400 mt-2">Fullstack Developer</p>
+                                            
+                                            <h3 className="text-2xl font-bold text-white mb-2">Esrael Zerihun</h3>
+                                            <p className="text-gray-400 mb-4">Fullstack Developer & UI/UX Designer</p>
+                                            
+                                            <div className="flex items-center gap-4 text-sm text-gray-400">
+                                                <div className="flex items-center gap-1">
+                                                    <FontAwesomeIcon icon={faGlobe} className="text-yellow-500" />
+                                                    <span>Addis Ababa, ET</span>
+                                                </div>
+                                                <div className="flex items-center gap-1">
+                                                    <FontAwesomeIcon icon={faBriefcase} className="text-yellow-500" />
+                                                    <span>3+ Years</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="grid grid-cols-3 border-t border-gray-800">
+                                        <div className="text-center p-4 border-r border-gray-800">
+                                            <div className="text-2xl font-bold text-white">50+</div>
+                                            <div className="text-xs text-gray-400">Projects</div>
+                                        </div>
+                                        <div className="text-center p-4 border-r border-gray-800">
+                                            <div className="text-2xl font-bold text-white">40+</div>
+                                            <div className="text-xs text-gray-400">Clients</div>
+                                        </div>
+                                        <div className="text-center p-4">
+                                            <div className="text-2xl font-bold text-white">100%</div>
+                                            <div className="text-xs text-gray-400">Satisfaction</div>
                                         </div>
                                     </div>
                                 </div>
@@ -124,32 +252,29 @@ const About = () => {
                         </div>
 
                         {/* About Content */}
-                        <div className="space-y-6">
+                        <div className="space-y-8">
                             <div>
-                                <h2 className="text-3xl font-bold text-white mb-4">
-                                    A Website Developer | Expert in Fullstack & Custom Web Solutions
+                                <h2 className="text-3xl font-bold text-white mb-6">
+                                    Transforming Ideas into <span className="text-yellow-400">Digital Reality</span>
                                 </h2>
                                 
-                                <div className="space-y-4 text-gray-300">
+                                <div className="space-y-4 text-gray-300 leading-relaxed">
                                     <p>
-                                        Hello! I'm Esrael, a passionate website developer with expertise in 
-                                        full-stack development and custom web solutions. I specialize in 
-                                        creating engaging, user-friendly, and high-performance websites 
-                                        that meet clients' unique needs.
+                                        Hello! I'm Esrael, a dedicated Fullstack Developer with over 3 years of 
+                                        experience in creating cutting-edge digital solutions. My expertise spans 
+                                        across the entire development lifecycle, from conceptualization to deployment.
                                     </p>
                                     
                                     <p>
-                                        Proficient in both front-end and back-end technologies including 
-                                        HTML, CSS, JavaScript, React, and Django. I build custom websites 
-                                        tailored to specific requirements, from e-commerce platforms to 
-                                        content management systems.
+                                        I specialize in building scalable web applications, intuitive mobile apps, 
+                                        and robust backend systems. My approach combines technical excellence with 
+                                        creative problem-solving to deliver solutions that exceed expectations.
                                     </p>
                                     
-                                    {/* Modal Content */}
                                     {isModalOpen && (
                                         <div className="mt-4 p-6 bg-gray-800/50 rounded-xl border border-gray-700 backdrop-blur-sm">
                                             <div className="flex justify-between items-start mb-4">
-                                                <h4 className="text-lg font-semibold text-white">More About Me</h4>
+                                                <h4 className="text-lg font-semibold text-white">Professional Journey</h4>
                                                 <button
                                                     onClick={() => setIsModalOpen(false)}
                                                     className="text-gray-400 hover:text-white transition-colors"
@@ -159,15 +284,14 @@ const About = () => {
                                             </div>
                                             <div className="space-y-3 text-gray-300">
                                                 <p>
-                                                    With over 3 years of experience in web development, 
-                                                    I've worked on various projects ranging from small 
-                                                    business websites to complex web applications.
+                                                    My journey in tech started with a passion for problem-solving 
+                                                    and has evolved into a career dedicated to creating meaningful 
+                                                    digital experiences.
                                                 </p>
                                                 <p>
-                                                    My approach combines technical expertise with creative 
-                                                    problem-solving to deliver solutions that not only 
-                                                    function perfectly but also provide exceptional user 
-                                                    experiences.
+                                                    I've had the privilege of working with diverse clients across 
+                                                    industries, from startups to established enterprises, helping 
+                                                    them leverage technology to achieve their business objectives.
                                                 </p>
                                             </div>
                                         </div>
@@ -190,21 +314,34 @@ const About = () => {
                                 </div>
                             </div>
 
+                            {/* Personal Traits */}
+                            <div className="grid grid-cols-2 gap-4">
+                                {traits.map((trait, index) => (
+                                    <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-gray-800/30">
+                                        <div className="p-2 rounded-lg bg-gradient-to-br from-yellow-500/20 to-orange-500/20">
+                                            <FontAwesomeIcon icon={trait.icon} className="text-yellow-500" />
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-medium text-sm">{trait.title}</h4>
+                                            <p className="text-gray-400 text-xs">{trait.description}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* CTA Buttons */}
                             <div className="pt-6 border-t border-gray-800">
-                                <p className="text-gray-300 mb-6">
-                                    Ready to bring your project to life? Feel free to reach out.
-                                </p>
-                                
                                 <div className="flex flex-wrap gap-4">
                                     <button 
                                         onClick={scrollToContact}
-                                        className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
+                                        className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center gap-2"
                                     >
-                                        Contact Me
+                                        <FontAwesomeIcon icon={faHandshake} />
+                                        Start Collaboration
                                     </button>
-                                    <button className="px-6 py-3 border-2 border-yellow-500 text-yellow-500 font-semibold rounded-lg hover:bg-yellow-500 hover:text-gray-900 transition-colors flex items-center gap-2">
+                                    <button className="px-6 py-3 border-2 border-yellow-500 text-yellow-500 font-semibold rounded-lg hover:bg-yellow-500 hover:text-gray-900 transition-all duration-300 hover:scale-105 flex items-center gap-2">
                                         <FontAwesomeIcon icon={faDownload} />
-                                        Download Resume
+                                        Download CV
                                     </button>
                                 </div>
                             </div>
@@ -214,20 +351,40 @@ const About = () => {
             </section>
 
             {/* Skills Section */}
-            <section id="skills" className="py-20 bg-gray-900/50">
+            <section id="skills" className="py-20 bg-gray-900/30">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-12">
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                            My <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Skills</span>
+                            Technical <span className="text-yellow-400">Expertise</span>
                         </h2>
                         <p className="text-gray-400 max-w-2xl mx-auto">
-                            Technologies and tools I work with to create amazing digital experiences
+                            Mastery of modern technologies and frameworks
                         </p>
+                    </div>
+
+                    {/* Skill Categories */}
+                    <div className="flex flex-wrap justify-center gap-3 mb-12">
+                        {skillCategories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => setActiveTab(category)}
+                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 capitalize ${
+                                    activeTab === category
+                                        ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-gray-900'
+                                        : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                                }`}
+                            >
+                                {category === 'all' ? 'All Skills' : category}
+                                <span className="ml-2 text-xs opacity-75">
+                                    ({skills.filter(s => category === 'all' || s.category === category).length})
+                                </span>
+                            </button>
+                        ))}
                     </div>
 
                     {/* Skills Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                        {skills.map((skill, index) => (
+                        {filteredSkills.map((skill, index) => (
                             <div 
                                 key={index}
                                 onClick={() => setActiveSkill(activeSkill === index ? null : index)}
@@ -242,29 +399,195 @@ const About = () => {
                                     color={skill.color}
                                 />
                                 
-                                {/* Skill Details */}
                                 <div className={`mt-4 text-center transition-all duration-300 ${
                                     activeSkill === index ? 'opacity-100' : 'opacity-80 group-hover:opacity-100'
                                 }`}>
                                     <h3 className="text-lg font-semibold text-white">{skill.name}</h3>
-                                    <p className="text-sm text-gray-400 mt-1">Expert Level</p>
+                                    <div className="flex items-center justify-center gap-2 mt-2">
+                                        <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
+                                            <div 
+                                                className="h-full bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"
+                                                style={{ width: `${skill.percentage}%` }}
+                                            />
+                                        </div>
+                                        <span className="text-sm text-gray-400">{skill.percentage}%</span>
+                                    </div>
                                 </div>
                             </div>
                         ))}
                     </div>
 
-                    {/* Additional Skills */}
-                    <div className="mt-16">
-                        <h3 className="text-2xl font-bold text-white text-center mb-8">Additional Expertise</h3>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {['Responsive Design', 'UI/UX Principles', 'API Development', 'DevOps Basics'].map((skill, index) => (
-                                <div 
-                                    key={index}
-                                    className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 border border-gray-700 hover:border-yellow-500/50 transition-colors text-center"
-                                >
-                                    <div className="text-yellow-500 font-semibold">{skill}</div>
+                    {/* Skills Summary */}
+                    <div className="mt-16 p-8 bg-gray-900/50 rounded-2xl border border-gray-800">
+                        <h3 className="text-2xl font-bold text-white mb-6 text-center">Skills Summary</h3>
+                        <div className="grid md:grid-cols-4 gap-6">
+                            <div className="text-center p-4">
+                                <div className="text-3xl font-bold text-yellow-400 mb-2">Frontend</div>
+                                <p className="text-gray-400 text-sm">React, Next.js, Vue.js</p>
+                            </div>
+                            <div className="text-center p-4">
+                                <div className="text-3xl font-bold text-yellow-400 mb-2">Backend</div>
+                                <p className="text-gray-400 text-sm">Django, Node.js, Python</p>
+                            </div>
+                            <div className="text-center p-4">
+                                <div className="text-3xl font-bold text-yellow-400 mb-2">Mobile</div>
+                                <p className="text-gray-400 text-sm">React Native, Flutter</p>
+                            </div>
+                            <div className="text-center p-4">
+                                <div className="text-3xl font-bold text-yellow-400 mb-2">DevOps</div>
+                                <p className="text-gray-400 text-sm">AWS, Docker, CI/CD</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Experience & Education */}
+            <section className="py-20">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-12">
+                        {/* Experience */}
+                        <div>
+                            <div className="flex items-center gap-3 mb-8">
+                                <FontAwesomeIcon icon={faBriefcase} className="text-2xl text-yellow-500" />
+                                <h2 className="text-3xl font-bold text-white">Professional Journey</h2>
+                            </div>
+                            
+                            <div className="space-y-8">
+                                {experience.map((exp, index) => (
+                                    <div key={index} className="relative pl-8">
+                                        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-yellow-500/50 to-transparent" />
+                                        <div className="absolute left-0 top-4 -translate-x-1/2 w-3 h-3 rounded-full bg-yellow-500" />
+                                        
+                                        <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-yellow-500/50 transition-colors">
+                                            <div className="flex justify-between items-start mb-4">
+                                                <div>
+                                                    <h3 className="text-xl font-semibold text-white mb-1">{exp.title}</h3>
+                                                    <p className="text-yellow-400">{exp.company}</p>
+                                                </div>
+                                                <span className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full">
+                                                    {exp.year}
+                                                </span>
+                                            </div>
+                                            
+                                            <p className="text-gray-400 mb-4">{exp.description}</p>
+                                            
+                                            <div className="space-y-2">
+                                                {exp.achievements.map((achievement, idx) => (
+                                                    <div key={idx} className="flex items-center gap-2">
+                                                        <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
+                                                        <span className="text-gray-300 text-sm">{achievement}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Education & Certifications */}
+                        <div>
+                            <div className="flex items-center gap-3 mb-8">
+                                <FontAwesomeIcon icon={faGraduationCap} className="text-2xl text-yellow-500" />
+                                <h2 className="text-3xl font-bold text-white">Education & Certifications</h2>
+                            </div>
+                            
+                            <div className="space-y-8">
+                                {/* Education */}
+                                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6">
+                                    <h3 className="text-xl font-semibold text-white mb-4">Education</h3>
+                                    <div className="space-y-6">
+                                        {education.map((edu, index) => (
+                                            <div key={index} className="pb-4 border-b border-gray-800 last:border-0">
+                                                <h4 className="text-lg font-medium text-white mb-1">{edu.degree}</h4>
+                                                <p className="text-yellow-400 text-sm mb-2">{edu.institution}</p>
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-400 text-sm">{edu.year}</span>
+                                                    <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">
+                                                        Completed
+                                                    </span>
+                                                </div>
+                                                <p className="text-gray-400 text-sm mt-2">{edu.description}</p>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            ))}
+
+                                {/* Certifications */}
+                                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6">
+                                    <h3 className="text-xl font-semibold text-white mb-4">Certifications</h3>
+                                    <div className="space-y-4">
+                                        {certifications.map((cert, index) => (
+                                            <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-gray-800/30">
+                                                <div>
+                                                    <h4 className="text-white font-medium">{cert.name}</h4>
+                                                    <p className="text-gray-400 text-sm">{cert.issuer}</p>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <FontAwesomeIcon icon={faCertificate} className="text-yellow-500" />
+                                                    <span className="text-gray-300 text-sm">{cert.year}</span>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Tools & Technologies */}
+                                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6">
+                                    <h3 className="text-xl font-semibold text-white mb-4">Development Tools</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['VS Code', 'Git', 'Docker', 'Figma', 'Postman', 'Jira', 'AWS Console', 'Chrome DevTools'].map((tool, index) => (
+                                            <span
+                                                key={index}
+                                                className="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm hover:bg-gray-800 transition-colors"
+                                            >
+                                                {tool}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Philosophy Section */}
+            <section className="py-20 bg-gray-900/30">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30">
+                            <FontAwesomeIcon icon={faLightbulb} className="text-yellow-500" />
+                            <span className="text-yellow-400 text-sm font-medium">My Philosophy</span>
+                        </div>
+                        
+                        <h2 className="text-4xl font-bold text-white mb-8">
+                            Building with <span className="text-yellow-400">Purpose</span>
+                        </h2>
+                        
+                        <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8">
+                            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+                                "I believe that great software is built at the intersection of technical 
+                                excellence and human-centered design. Every line of code should serve a 
+                                purpose, every interface should feel intuitive, and every solution should 
+                                make a meaningful impact."
+                            </p>
+                            
+                            <div className="flex items-center justify-center gap-8">
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-yellow-400">Clean</div>
+                                    <div className="text-gray-400 text-sm">Code Quality</div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-yellow-400">Efficient</div>
+                                    <div className="text-gray-400 text-sm">Performance</div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-yellow-400">Scalable</div>
+                                    <div className="text-gray-400 text-sm">Architecture</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
