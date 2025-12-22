@@ -41,40 +41,40 @@ const About = () => {
         { name: 'PostgreSQL', percentage: 75, icon: faDatabase, color: 'from-blue-400 to-blue-600', category: 'database' },
         { name: 'MongoDB', percentage: 70, icon: faDatabase, color: 'from-green-400 to-green-600', category: 'database' },
         { name: 'React Native', percentage: 75, icon: faMobile, color: 'from-indigo-500 to-purple-500', category: 'mobile' },
-        { name: 'AWS', percentage: 65, icon: faCloud, color: 'from-orange-400 to-orange-600', category: 'devops' }
+        { name: 'Git', percentage: 65, icon: faGit, color: 'from-orange-400 to-orange-600', category: 'devops' }
     ];
 
     // Experience timeline
     const experience = [
         {
-            year: '2024 - Present',
+            year: '2021 - Present',
             title: 'Senior Fullstack Developer',
             company: 'Freelance & Contract',
             description: 'Leading development of complex web applications and mentoring junior developers',
             achievements: ['Built 15+ production applications', 'Improved performance by 40%', 'Implemented CI/CD pipelines']
         },
         {
-            year: '2022 - 2024',
+            year: '2024 - Present',
             title: 'Fullstack Developer',
-            company: 'Tech Solutions Inc.',
+            company: 'LevelUp Inc.',
             description: 'Developed and maintained web applications for various clients',
-            achievements: ['Reduced load times by 60%', 'Increased user engagement by 35%', 'Integrated 10+ third-party APIs']
+            achievements: ['Reduced load times by 60%', 'Increased user engagement by 35%']
         },
         {
-            year: '2021 - 2022',
+            year: '2024',
             title: 'Frontend Developer',
-            company: 'Digital Agency',
+            company: 'Playground Service Provder',
             description: 'Created responsive websites and user interfaces',
-            achievements: ['Built 20+ responsive websites', 'Implemented design systems', 'Improved accessibility scores']
+            achievements: ['Implemented design systems', 'Improved accessibility scores']
         }
     ];
 
     // Education
     const education = [
         {
-            degree: 'BSc in Computer Science',
-            institution: 'University of Technology',
-            year: '2018 - 2022',
+            degree: 'BSc in Mechanical Engineering',
+            institution: 'Haramaya University',
+            year: '2016 - 2021',
             description: 'Specialized in software engineering and web technologies'
         },
         {
@@ -87,9 +87,7 @@ const About = () => {
 
     // Certifications
     const certifications = [
-        { name: 'AWS Certified Developer', issuer: 'Amazon Web Services', year: '2023' },
-        { name: 'React Professional Certificate', issuer: 'Meta', year: '2022' },
-        { name: 'Python Django Specialist', issuer: 'Django Software Foundation', year: '2022' }
+        { name: 'Programming Fundamentals', issuer: 'Udacity ', year: '2023' },
     ];
 
     // Personal traits
