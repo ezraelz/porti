@@ -1,7 +1,6 @@
 {
   "name": "portifolio_1",
   "version": "0.1.0",
-  "homepage": "https://ezraelz.github.io/porti",
   "private": false,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
