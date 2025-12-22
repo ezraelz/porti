@@ -22,6 +22,10 @@ import {
   faMobile,
   faCloud
 } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faGithub,
+
+} from '@fortawesome/free-brands-svg-icons';
 
 const About = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,7 +45,7 @@ const About = () => {
         { name: 'PostgreSQL', percentage: 75, icon: faDatabase, color: 'from-blue-400 to-blue-600', category: 'database' },
         { name: 'MongoDB', percentage: 70, icon: faDatabase, color: 'from-green-400 to-green-600', category: 'database' },
         { name: 'React Native', percentage: 75, icon: faMobile, color: 'from-indigo-500 to-purple-500', category: 'mobile' },
-        { name: 'Git', percentage: 65, icon: faGit, color: 'from-orange-400 to-orange-600', category: 'devops' }
+        { name: 'Git', percentage: 65, icon: faGithub, color: 'from-orange-400 to-orange-600', category: 'devops' }
     ];
 
     // Experience timeline
