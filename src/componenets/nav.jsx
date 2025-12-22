@@ -6,11 +6,12 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
+     setIsMenuOpen(false);
+      window.scrollTo(0, 0);
+  }, [pathname, hash]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-md py-4 border-b border-gray-800">

@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
 
 import Navbar from './componenets/nav';
 import Footer from './componenets/footer';
@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <HashRouter>
       <div className={`min-h-screen transition-colors duration-300 ${isLoading ? 'bg-gray-900' : 'bg-white'}`}>
         <Navbar />
 
@@ -59,7 +59,7 @@ function App() {
         <Reaction />
         <Footer />
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
