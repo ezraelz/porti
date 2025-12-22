@@ -26,6 +26,7 @@ import {
   faGithub,
 
 } from '@fortawesome/free-brands-svg-icons';
+import propic from '/images/propic.jpg'
 
 const About = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -203,11 +204,18 @@ const About = () => {
                                         <div className="flex flex-col items-center text-center">
                                             <div className="relative mb-6">
                                                 <div className="w-48 h-48 rounded-full bg-gradient-to-br from-yellow-500/20 to-blue-500/20 p-1">
-                                                    <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
-                                                        <div className="w-44 h-44 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                                                    <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
+                                                        <div className="w-42 h-42 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
                                                             <div className="text-center">
-                                                                <div className="text-5xl mb-2">👨‍💻</div>
-                                                                <div className="text-yellow-400 font-bold">Esrael Z.</div>
+                                                                {propic ? 
+                                                                  <img className="text-2xl" src={propic} alt="" /> 
+                                                                 : 
+                                                                  <div>
+                                                                    <div className="text-5xl mb-2">👨‍💻</div>
+                                                                    <div className="text-yellow-400 font-bold">Esrael Z.</div>
+                                                                  </div>
+                                                                }
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
@@ -229,7 +237,7 @@ const About = () => {
                                                 </div>
                                                 <div className="flex items-center gap-1">
                                                     <FontAwesomeIcon icon={faBriefcase} className="text-yellow-500" />
-                                                    <span>3+ Years</span>
+                                                    <span>4+ Years</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -241,7 +249,7 @@ const About = () => {
                                             <div className="text-xs text-gray-400">Projects</div>
                                         </div>
                                         <div className="text-center p-4 border-r border-gray-800">
-                                            <div className="text-2xl font-bold text-white">40+</div>
+                                            <div className="text-2xl font-bold text-white">20+</div>
                                             <div className="text-xs text-gray-400">Clients</div>
                                         </div>
                                         <div className="text-center p-4">
@@ -262,7 +270,7 @@ const About = () => {
                                 
                                 <div className="space-y-4 text-gray-300 leading-relaxed">
                                     <p>
-                                        Hello! I'm Esrael, a dedicated Fullstack Developer with over 3 years of 
+                                        Hello! I'm Esrael, a dedicated Fullstack Developer with over 4 years of 
                                         experience in creating cutting-edge digital solutions. My expertise spans 
                                         across the entire development lifecycle, from conceptualization to deployment.
                                     </p>
@@ -437,7 +445,7 @@ const About = () => {
                             </div>
                             <div className="text-center p-4">
                                 <div className="text-3xl font-bold text-yellow-400 mb-2">DevOps</div>
-                                <p className="text-gray-400 text-sm">AWS, Docker, CI/CD</p>
+                                <p className="text-gray-400 text-sm">Git, Docker, CI/CD</p>
                             </div>
                         </div>
                     </div>

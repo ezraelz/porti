@@ -35,6 +35,7 @@ import {
   faWhatsapp
 } from '@fortawesome/free-brands-svg-icons';
 import emailjs from '@emailjs/browser';
+import propic from '/images/propic.jpg';
 
 // Custom FAQ Component
 const FaqShow = () => {
@@ -157,7 +158,7 @@ const Home = ({ interval = 5000 }) => {
     { name: 'Python/Django', percentage: 88, gradient: 'from-green-400 to-green-600', icon: faServer },
     { name: 'Tailwind CSS', percentage: 95, gradient: 'from-teal-500 to-cyan-500', icon: faPaintBrush },
     { name: 'React Native', percentage: 78, gradient: 'from-indigo-500 to-purple-500', icon: faMobileAlt },
-    { name: 'AWS/Cloud', percentage: 70, gradient: 'from-orange-500 to-yellow-500', icon: faCloud }
+    { name: 'Git/Github', percentage: 70, gradient: 'from-orange-500 to-yellow-500', icon: faGithub }
   ];
   
   const services = [
@@ -170,7 +171,7 @@ const Home = ({ interval = 5000 }) => {
       features: ['Wireframing', 'Prototyping', 'User Testing', 'Design Systems', 'Accessibility'],
       gradient: 'from-pink-500 to-purple-600',
       color: 'text-pink-400',
-      projects: '25+ Projects'
+      projects: '20+ Projects'
     },
     {
       id: 'web-dev',
@@ -181,7 +182,7 @@ const Home = ({ interval = 5000 }) => {
       features: ['Full-Stack', 'Responsive Design', 'Performance', 'SEO', 'E-commerce'],
       gradient: 'from-blue-500 to-cyan-600',
       color: 'text-blue-400',
-      projects: '40+ Projects'
+      projects: '20+ Projects'
     },
     {
       id: 'mobile-dev',
@@ -192,7 +193,7 @@ const Home = ({ interval = 5000 }) => {
       features: ['React Native', 'iOS/Android', 'App Store', 'Push Notifications', 'Offline'],
       gradient: 'from-indigo-500 to-purple-600',
       color: 'text-indigo-400',
-      projects: '15+ Apps'
+      projects: '5+ Apps'
     },
     {
       id: 'consulting',
@@ -203,14 +204,14 @@ const Home = ({ interval = 5000 }) => {
       features: ['Strategy', 'Technical Audit', 'Planning', 'Support', 'Training'],
       gradient: 'from-green-500 to-emerald-600',
       color: 'text-green-400',
-      projects: '30+ Clients'
+      projects: '5+ Clients'
     }
   ];
 
   const stats = [
-    { value: '80+', label: 'Projects Completed', icon: faRocket, color: 'text-yellow-400' },
+    { value: '50+', label: 'Projects Completed', icon: faRocket, color: 'text-yellow-400' },
     { value: '4+', label: 'Years Experience', icon: faChartLine, color: 'text-orange-400' },
-    { value: '50+', label: 'Happy Clients', icon: faUsers, color: 'text-blue-400' },
+    { value: '10+', label: 'Happy Clients', icon: faUsers, color: 'text-blue-400' },
     { value: '100%', label: 'Satisfaction Rate', icon: faAward, color: 'text-green-400' }
   ];
 
@@ -225,19 +226,19 @@ const Home = ({ interval = 5000 }) => {
 
   const testimonials = [
     {
-      name: 'Alex Johnson',
-      role: 'CEO, TechStart Inc.',
+      name: 'Ermias Desalegn',
+      role: 'LevelUp Inc.',
       content: 'Esrael transformed our outdated website into a modern, high-performing platform that increased our conversions by 40%.',
       rating: 5
     },
     {
-      name: 'Sarah Williams',
+      name: 'Melat',
       role: 'Product Manager',
       content: 'The mobile app he built for us received 4.8 stars on the App Store. His attention to detail is exceptional.',
       rating: 5
     },
     {
-      name: 'Michael Chen',
+      name: 'Arkipose',
       role: 'CTO, InnovateLabs',
       content: 'Working with Esrael was a game-changer. His technical expertise and communication skills are top-notch.',
       rating: 5
@@ -369,7 +370,7 @@ const Home = ({ interval = 5000 }) => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-500/5 via-transparent to-transparent" />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:items-center">
+          <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:items-center py-10 lg:py-0">
             {/* Profile Image */}
             <div className="relative">
               <div className="absolute -inset-4 animate-pulse rounded-full bg-gradient-to-r from-yellow-500 via-orange-500 to-blue-500 opacity-20 blur-xl" />
@@ -378,8 +379,14 @@ const Home = ({ interval = 5000 }) => {
                   <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full border-4 border-gray-800 overflow-hidden shadow-2xl">
                     <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="text-6xl mb-4">👨‍💻</div>
-                        <div className="text-white font-bold text-xl">Esrael Z.</div>
+                        {propic ? 
+                          <img className="text-2xl" src={propic} alt="" /> 
+                          : 
+                          <div>
+                            <div className="text-5xl mb-2">👨‍💻</div>
+                            <div className="text-yellow-400 font-bold">Esrael Z.</div>
+                          </div>
+                        }
                       </div>
                     </div>
                   </div>
@@ -394,7 +401,7 @@ const Home = ({ interval = 5000 }) => {
             </div>
 
             {/* Hero Content */}
-            <div className="max-w-2xl text-center lg:text-left">
+            <div className="max-w-3xl text-center lg:text-left">
               <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30">
                 <FontAwesomeIcon icon={faRocket} className="text-yellow-500" />
                 <span className="text-yellow-400 text-sm font-medium">Fullstack Developer</span>
@@ -449,7 +456,7 @@ const Home = ({ interval = 5000 }) => {
           </div>
           
           {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
             <div className="animate-bounce">
               <div className="flex h-10 w-6 justify-center rounded-full border-2 border-yellow-500">
                 <div className="mt-2 h-3 w-1 animate-pulse rounded-full bg-yellow-500" />
@@ -492,7 +499,7 @@ const Home = ({ interval = 5000 }) => {
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-6">
                 <h4 className="text-xl font-semibold text-white mb-4">Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
-                  {['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'AWS', 'Docker', 'Figma', 'Git'].map((tech, idx) => (
+                  {['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'Docker', 'Figma', 'Git'].map((tech, idx) => (
                     <span key={idx} className="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm hover:bg-gray-800 transition-colors">
                       {tech}
                     </span>
@@ -557,7 +564,7 @@ const Home = ({ interval = 5000 }) => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {services.map((service) => (
               <ServiceCard key={service.id} service={service} />
             ))}

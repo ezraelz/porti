@@ -11,12 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Reaction = () => {
   const [count, setCount] = useState({ like: 0, dislike: 0 });
   const [userReaction, setUserReaction] = useState(null);
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleReaction = (reactionType) => {
     if (reactionType === 'like') {
