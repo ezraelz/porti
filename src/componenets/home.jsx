@@ -209,7 +209,7 @@ const Home = ({ interval = 5000 }) => {
   ];
 
   const stats = [
-    { value: '50+', label: 'Projects Completed', icon: faRocket, color: 'text-yellow-400' },
+    { value: '35+', label: 'Projects Completed', icon: faRocket, color: 'text-yellow-400' },
     { value: '4+', label: 'Years Experience', icon: faChartLine, color: 'text-orange-400' },
     { value: '10+', label: 'Happy Clients', icon: faUsers, color: 'text-blue-400' },
     { value: '100%', label: 'Satisfaction Rate', icon: faAward, color: 'text-green-400' }
@@ -574,7 +574,7 @@ const Home = ({ interval = 5000 }) => {
           <div className="mt-12 grid sm:grid-cols-3 gap-6">
             {[
               { title: 'API Development', icon: faServer, desc: 'REST & GraphQL APIs' },
-              { title: 'Cloud Solutions', icon: faCloud, desc: 'AWS, Azure, GCP' },
+              { title: 'Cloud Solutions', icon: faCloud, desc: '' },
               { title: 'DevOps', icon: faCogs, desc: 'CI/CD & Automation' }
             ].map((service, idx) => (
               <div key={idx} className="bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 p-4 text-center hover:border-yellow-500/50 transition-colors">

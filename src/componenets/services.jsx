@@ -46,7 +46,7 @@ const Services = () => {
       gradient: 'from-pink-500 via-purple-500 to-pink-600',
       color: 'text-pink-400',
       bgColor: 'bg-pink-500/10',
-      stats: ['50+ Projects', '95% Satisfaction', '2 Weeks Avg'],
+      stats: ['25+ Projects', '95% Satisfaction', '2 Weeks Avg'],
       details: 'I specialize in creating user-centered designs that combine aesthetics with functionality. Every interface is crafted through extensive research, prototyping, and testing to ensure optimal user experience across all devices.'
     },
     {
@@ -66,7 +66,7 @@ const Services = () => {
       gradient: 'from-blue-500 via-cyan-500 to-blue-600',
       color: 'text-blue-400',
       bgColor: 'bg-blue-500/10',
-      stats: ['100+ Projects', '99% Uptime', '4 Weeks Avg'],
+      stats: ['20+ Projects', '99% Uptime', '4 Weeks Avg'],
       details: 'From dynamic web applications to complex enterprise solutions, I build using cutting-edge technologies like React, Next.js, and Django. Focus on scalability, security, and maintainability.'
     },
     {
@@ -86,7 +86,7 @@ const Services = () => {
       gradient: 'from-indigo-500 via-purple-500 to-indigo-600',
       color: 'text-indigo-400',
       bgColor: 'bg-indigo-500/10',
-      stats: ['30+ Apps', '4.8 Avg Rating', '6 Weeks Avg'],
+      stats: ['5+ Apps', '4.8 Avg Rating', '6 Weeks Avg'],
       details: 'Developing mobile applications that provide seamless user experiences across iOS and Android platforms. Focus on performance, intuitive navigation, and engaging interactions.'
     },
     {
@@ -106,7 +106,7 @@ const Services = () => {
       gradient: 'from-green-500 via-emerald-500 to-green-600',
       color: 'text-green-400',
       bgColor: 'bg-green-500/10',
-      stats: ['40+ Clients', '100% ROI Focus', 'Ongoing Support'],
+      stats: ['10+ Clients', '100% ROI Focus', 'Ongoing Support'],
       details: 'Strategic guidance to help businesses leverage technology effectively. From startup MVPs to enterprise digital transformation.'
     }
   ];

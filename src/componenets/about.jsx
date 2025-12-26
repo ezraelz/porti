@@ -245,11 +245,11 @@ const About = () => {
                                     
                                     <div className="grid grid-cols-3 border-t border-gray-800">
                                         <div className="text-center p-4 border-r border-gray-800">
-                                            <div className="text-2xl font-bold text-white">50+</div>
+                                            <div className="text-2xl font-bold text-white">35+</div>
                                             <div className="text-xs text-gray-400">Projects</div>
                                         </div>
                                         <div className="text-center p-4 border-r border-gray-800">
-                                            <div className="text-2xl font-bold text-white">20+</div>
+                                            <div className="text-2xl font-bold text-white">10+</div>
                                             <div className="text-xs text-gray-400">Clients</div>
                                         </div>
                                         <div className="text-center p-4">
