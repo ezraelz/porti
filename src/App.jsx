@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 
 import Navbar from './componenets/nav';
 import Footer from './componenets/footer';
