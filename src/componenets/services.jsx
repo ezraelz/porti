@@ -116,7 +116,7 @@ const Services = () => {
     {
       title: 'Cloud Solutions',
       icon: faCloud,
-      description: 'AWS, Azure, and Google Cloud deployment',
+      description: '',
       features: ['Serverless Architecture', 'Microservices', 'CI/CD Pipelines'],
       color: 'from-orange-500 to-red-500'
     },

@@ -2,6 +2,7 @@
   "name": "portifolio_1",
   "version": "0.1.0",
   "private": false,
+  "homepage": "https://ezraelz.github.io/porti",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
