@@ -36,6 +36,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import emailjs from '@emailjs/browser';
 import propic from '/images/propic.jpg';
+import Projects from './projects';
 
 // Custom FAQ Component
 const FaqShow = () => {
@@ -583,6 +584,15 @@ const Home = ({ interval = 5000 }) => {
                 <p className="text-gray-400 text-sm">{service.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Project Section */}
+      <section id="services" className="py-20 bg-gray-900/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Projects/>
           </div>
         </div>
       </section>
