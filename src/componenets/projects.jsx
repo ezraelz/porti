@@ -18,9 +18,11 @@ import abrencoffee from '../assets/abrencoffee.png';
 import levelupet from '../assets/levelupet.png';
 import wubcourtyard from '../assets/wubcourtyard.png';
 import sms from '../assets/sms.png';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const navigate = useNavigate();
   
   const projects = [
     {
@@ -114,7 +116,7 @@ const Projects = () => {
         </div>
 
         {/* Filter Buttons - Dark Theme */}
-        <div className="flex flex-wrap justify-center gap-3 mb-6">
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
           {filters.map((filter) => (
             <button
               key={filter.id}
@@ -302,8 +304,8 @@ const Projects = () => {
                 Whether you have a project in mind or just want to explore possibilities, 
                 I'm here to help transform your vision into reality.
               </p>
-              <a 
-                href="/contact"
+              <a
+                href="#contact"
                 className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
               >
                 <span>Start a Project</span>

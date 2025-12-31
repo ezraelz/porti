@@ -500,7 +500,7 @@ const Home = ({ interval = 5000 }) => {
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-6">
                 <h4 className="text-xl font-semibold text-white mb-4">Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
-                  {['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'Docker', 'Figma', 'Git'].map((tech, idx) => (
+                  {['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'MySQL','Docker', 'Git'].map((tech, idx) => (
                     <span key={idx} className="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm hover:bg-gray-800 transition-colors">
                       {tech}
                     </span>

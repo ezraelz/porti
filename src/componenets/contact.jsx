@@ -207,7 +207,6 @@ const Contact = () => {
                         aria-label={social.name}
                       >
                         <FontAwesomeIcon icon={social.icon} className="text-xl mb-1" />
-                        <span className="text-xs">{social.name}</span>
                       </a>
                     ))}
                   </div>
