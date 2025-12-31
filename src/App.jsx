@@ -7,6 +7,7 @@ import Footer from './componenets/footer';
 import Reaction from './componenets/reaction';
 import './index.css';
 import Loading from './componenets/loading';
+import ServiceSinglePage from './componenets/serviceSinglePage';
 
 // Lazy load components
 const Home = lazy(() => import('./componenets/home'));
@@ -50,6 +51,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/serviceSinglepage/:id" element={<ServiceSinglePage />} />
               <Route path="/faq" element={<Faq />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>

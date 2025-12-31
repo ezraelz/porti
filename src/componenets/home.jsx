@@ -37,6 +37,7 @@ import {
 import emailjs from '@emailjs/browser';
 import propic from '/images/propic.jpg';
 import Projects from './projects';
+import { useNavigate } from 'react-router-dom';
 
 // Custom FAQ Component
 const FaqShow = () => {
@@ -143,6 +144,7 @@ const Home = ({ interval = 5000 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [activeService, setActiveService] = useState(null);
   const formRef = useRef(null);
+  const navigate = useNavigate();
   
   const images = [
     'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -345,7 +347,9 @@ const Home = ({ interval = 5000 }) => {
           </div>
         </div>
         
-        <button className="mt-6 w-full py-3 bg-gradient-to-r from-gray-900 to-black text-gray-300 rounded-lg hover:from-gray-800 hover:to-gray-900 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group-hover:translate-y-0 transform translate-y-2 opacity-0 group-hover:opacity-100">
+        <button 
+          onClick={()=> navigate(`/serviceSinglepage/${service.id}`)}
+          className="mt-6 w-full py-3 bg-gradient-to-r from-gray-900 to-black text-gray-300 rounded-lg hover:from-gray-800 hover:to-gray-900 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group-hover:translate-y-0 transform translate-y-2 opacity-0 group-hover:opacity-100">
           Explore Service
           <FontAwesomeIcon icon={faArrowRight} className="group-hover:translate-x-1 transition-transform" />
         </button>
@@ -500,7 +504,7 @@ const Home = ({ interval = 5000 }) => {
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-6">
                 <h4 className="text-xl font-semibold text-white mb-4">Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
-                  {['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'MySQL','Docker', 'Git'].map((tech, idx) => (
+                  {['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'MySQL','Docker', 'Git', 'HTML5', 'CSS3', 'JavaScript', 'Python'].map((tech, idx) => (
                     <span key={idx} className="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm hover:bg-gray-800 transition-colors">
                       {tech}
                     </span>

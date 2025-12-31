@@ -44,7 +44,7 @@ const Projects = () => {
       tags: ["React Native", "Firebase", "Redux"],
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
       github: "https://github.com",
-      live: "",
+      live: "#",
       featured: true
     },
     {
