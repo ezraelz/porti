@@ -51,11 +51,11 @@ const ServiceSinglePage = () => {
       description: 'Creating beautiful, intuitive interfaces with user-centered design principles for optimal user experience.',
       longDescription: `I specialize in creating user-centered designs that combine aesthetics with functionality. Every interface is crafted through extensive research, prototyping, and testing to ensure optimal user experience across all devices.
 
-My design process focuses on understanding user behavior, business goals, and technical constraints to create interfaces that are not only beautiful but also highly functional and accessible.`,
+      My design process focuses on understanding user behavior, business goals, and technical constraints to create interfaces that are not only beautiful but also highly functional and accessible.`,
       
       // Service Details
       duration: '2-4 Weeks',
-      priceRange: '$3,000 - $20,000+',
+      priceRange: '$100 - $20,000+',
       complexity: 'Medium to High',
       deliverables: [
         'User research report',
@@ -180,7 +180,7 @@ My design process focuses on understanding user behavior, business goals, and te
       pricing: [
         {
           tier: 'Basic',
-          price: '$3,000',
+          price: '$100',
           description: 'For landing pages or simple apps',
           features: [
             'Up to 5 screens',
@@ -191,7 +191,7 @@ My design process focuses on understanding user behavior, business goals, and te
         },
         {
           tier: 'Professional',
-          price: '$10,000',
+          price: '$200',
           description: 'For web apps or mobile apps',
           features: [
             'User research',
@@ -227,7 +227,7 @@ My design process focuses on understanding user behavior, business goals, and te
       description: 'Building responsive, high-performance web applications using modern technologies and best practices.',
       longDescription: `From dynamic web applications to complex enterprise solutions, I build using cutting-edge technologies like React, Next.js, and Django. Focus on scalability, security, and maintainability.
 
-I specialize in creating web applications that not only look stunning but also perform exceptionally well. Every project follows industry best practices for code quality, performance optimization, and security.`,
+      I specialize in creating web applications that not only look stunning but also perform exceptionally well. Every project follows industry best practices for code quality, performance optimization, and security.`,
       
       // Service Details
       duration: '4-8 Weeks',
@@ -282,11 +282,13 @@ I specialize in creating web applications that not only look stunning but also p
         'Next.js',
         'TypeScript',
         'Tailwind CSS',
+        'Bootstrap',
         'Node.js',
+        'Django',
         'Express',
         'PostgreSQL',
-        'MongoDB',
-        'AWS',
+        'MySQL',
+        'Java',
         'Docker'
       ],
       
@@ -335,14 +337,12 @@ I specialize in creating web applications that not only look stunning but also p
         {
           title: 'E-commerce Platform',
           description: 'Built a scalable online store with 10,000+ products',
-          results: 'Increased sales by 150% in 3 months',
-          tech: ['React', 'Node.js', 'MongoDB', 'AWS']
+          tech: ['React', 'TypeScript', 'MySQL', 'Django']
         },
         {
-          title: 'SaaS Dashboard',
-          description: 'Analytics dashboard for B2B SaaS company',
-          results: 'Improved user engagement by 80%',
-          tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Docker']
+          title: 'SMS Dashboard',
+          description: 'School management system with real-time analytics',
+          tech: ['React', 'TypeScript', 'MySQL', 'Docker']
         }
       ],
       
@@ -406,7 +406,7 @@ I specialize in creating web applications that not only look stunning but also p
       description: 'Creating engaging mobile applications for iOS and Android with native performance and modern features.',
       longDescription: `Developing mobile applications that provide seamless user experiences across iOS and Android platforms. Focus on performance, intuitive navigation, and engaging interactions.
 
-I use React Native for cross-platform development and native technologies for platform-specific features, ensuring your app looks and feels native on every device while maintaining code efficiency.`,
+        I use React Native for cross-platform development and native technologies for platform-specific features, ensuring your app looks and feels native on every device while maintaining code efficiency.`,
       
       // Service Details
       duration: '6-12 Weeks',
@@ -583,11 +583,11 @@ I use React Native for cross-platform development and native technologies for pl
       description: 'Providing expert advice and solutions to help optimize your digital presence and achieve business goals.',
       longDescription: `Strategic guidance to help businesses leverage technology effectively. From startup MVPs to enterprise digital transformation, I provide actionable insights and roadmaps.
 
-My consulting services focus on aligning technology with business objectives, optimizing existing systems, and planning for future growth with sustainable, scalable solutions.`,
+        My consulting services focus on aligning technology with business objectives, optimizing existing systems, and planning for future growth with sustainable, scalable solutions.`,
       
       // Service Details
       duration: 'Ongoing',
-      priceRange: '$50 - $10/mo',
+      priceRange: '$50 - $1000/mo',
       complexity: 'Strategic',
       deliverables: [
         'Technology assessment report',
@@ -781,11 +781,10 @@ My consulting services focus on aligning technology with business objectives, op
     { id: 'overview', label: 'Overview' },
     { id: 'features', label: 'Features' },
     { id: 'process', label: 'Process' },
-    { id: 'cases', label: 'Case Studies' },
+    { id: 'projects', label: 'Projects' },
     { id: 'pricing', label: 'Pricing' },
     { id: 'contact', label: 'Contact' }
   ];
-
 
   const gradientColor = serviceData.gradient || 'from-blue-500 to-purple-600';
   const textColor = serviceData.color || 'text-blue-400';
@@ -1126,7 +1125,7 @@ My consulting services focus on aligning technology with business objectives, op
         return renderProcessSection();
       case 'pricing':
         return renderPricingSection();
-      case 'cases':
+      case 'projects':
         return renderCaseStudiesSection();
       case 'contact':
         return renderContactSection();
@@ -1171,7 +1170,7 @@ My consulting services focus on aligning technology with business objectives, op
             
             <div className="flex flex-wrap gap-4 mb-10">
               <button
-                onClick={handleContactClick}
+                onClick={() => navigate('/contact')}
                 className={`group px-8 py-3 bg-gradient-to-r ${gradientColor} text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 flex items-center gap-3`}
               >
                 Start Project
@@ -1179,7 +1178,7 @@ My consulting services focus on aligning technology with business objectives, op
               </button>
               
               <button
-                onClick={() => scrollToSection('pricing')}
+                onClick={() => setActiveTab('pricing')}
                 className={`px-8 py-3 border-2 ${textColor.replace('text-', 'border-')} ${textColor} font-semibold rounded-xl hover:bg-blue-500/10 transition-all duration-300`}
               >
                 View Pricing

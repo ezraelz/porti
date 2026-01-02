@@ -294,13 +294,13 @@ const Home = ({ interval = 5000 }) => {
           <span className="text-sm font-medium text-gray-300">{label}</span>
         </div>
         <span className="text-sm font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-          {percentage}%
+          
         </span>
       </div>
       <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
         <div 
           className={`h-full rounded-full bg-gradient-to-r ${gradient} transition-all duration-1000 ease-out`}
-          style={{ width: `${percentage}%` }}
+          style={{ width: `` }}
         />
       </div>
     </div>
@@ -504,7 +504,7 @@ const Home = ({ interval = 5000 }) => {
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-6">
                 <h4 className="text-xl font-semibold text-white mb-4">Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
-                  {['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'MySQL','Docker', 'Git', 'HTML5', 'CSS3', 'JavaScript', 'Python'].map((tech, idx) => (
+                  {['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'MySQL','Docker', 'Git', 'HTML5', 'CSS3', 'JavaScript', 'Python', 'Java'].map((tech, idx) => (
                     <span key={idx} className="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm hover:bg-gray-800 transition-colors">
                       {tech}
                     </span>

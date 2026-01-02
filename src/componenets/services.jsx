@@ -145,10 +145,10 @@ const Services = () => {
 
   // Technology Stack
   const techStack = {
-    frontend: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Material-UI'],
-    backend: ['Node.js', 'Django', 'Python', 'Express.js', 'PostgreSQL', 'MongoDB'],
+    frontend: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Material-UI', 'Bootstrap'],
+    backend: ['Node.js', 'Django', 'Python', 'Express.js', 'PostgreSQL', 'MySQL', 'Java'],
     mobile: ['React Native', 'Flutter', 'iOS Swift', 'Android Kotlin'],
-    tools: ['Git', 'Docker', 'AWS', 'Figma', 'Jira', 'VS Code']
+    tools: ['Git', 'Docker', 'Figma', 'Jira', 'VS Code']
   };
 
   // Process Steps

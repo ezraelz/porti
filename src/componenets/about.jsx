@@ -43,10 +43,14 @@ const About = () => {
         { name: 'Tailwind CSS', percentage: 95, icon: faPalette, color: 'from-teal-500 to-cyan-500', category: 'frontend' },
         { name: 'Django', percentage: 90, icon: faServer, color: 'from-green-500 to-emerald-500', category: 'backend' },
         { name: 'Python', percentage: 88, icon: faCode, color: 'from-blue-500 to-indigo-500', category: 'backend' },
+        { name: 'Java', percentage: 88, icon: faCode, color: 'from-blue-500 to-indigo-500', category: 'backend' },
         { name: 'PostgreSQL', percentage: 75, icon: faDatabase, color: 'from-blue-400 to-blue-600', category: 'database' },
-        { name: 'MongoDB', percentage: 70, icon: faDatabase, color: 'from-green-400 to-green-600', category: 'database' },
+        { name: 'MySQL', percentage: 70, icon: faDatabase, color: 'from-green-400 to-green-600', category: 'database' },
         { name: 'React Native', percentage: 75, icon: faMobile, color: 'from-indigo-500 to-purple-500', category: 'mobile' },
-        { name: 'Git', percentage: 65, icon: faGithub, color: 'from-orange-400 to-orange-600', category: 'devops' }
+        { name: 'Kotlin', percentage: 75, icon: faMobile, color: 'from-indigo-500 to-purple-500', category: 'mobile' },
+        { name: 'Git', percentage: 65, icon: faGithub, color: 'from-orange-400 to-orange-600', category: 'devops' },
+        { name: 'Docker', percentage: 65, icon: faGithub, color: 'from-orange-400 to-orange-600', category: 'devops' },
+        { name: 'CI/CD', percentage: 65, icon: faGithub, color: 'from-orange-400 to-orange-600', category: 'devops' },
     ];
 
     // Experience timeline
@@ -402,12 +406,6 @@ const About = () => {
                                     activeSkill === index ? 'scale-105' : 'hover:scale-105'
                                 }`}
                             >
-                                <CircularProgress 
-                                    percentage={skill.percentage}
-                                    skill={skill.name}
-                                    icon={skill.icon}
-                                    color={skill.color}
-                                />
                                 
                                 <div className={`mt-4 text-center transition-all duration-300 ${
                                     activeSkill === index ? 'opacity-100' : 'opacity-80 group-hover:opacity-100'
@@ -417,10 +415,10 @@ const About = () => {
                                         <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
                                             <div 
                                                 className="h-full bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"
-                                                style={{ width: `${skill.percentage}%` }}
+                                                style={{ width: `` }}
                                             />
                                         </div>
-                                        <span className="text-sm text-gray-400">{skill.percentage}%</span>
+                                        <span className="text-sm text-gray-400"></span>
                                     </div>
                                 </div>
                             </div>
@@ -437,11 +435,11 @@ const About = () => {
                             </div>
                             <div className="text-center p-4">
                                 <div className="text-3xl font-bold text-yellow-400 mb-2">Backend</div>
-                                <p className="text-gray-400 text-sm">Django, Node.js, Python</p>
+                                <p className="text-gray-400 text-sm">Django, Node.js, Python, Java</p>
                             </div>
                             <div className="text-center p-4">
                                 <div className="text-3xl font-bold text-yellow-400 mb-2">Mobile</div>
-                                <p className="text-gray-400 text-sm">React Native, Flutter</p>
+                                <p className="text-gray-400 text-sm">React Native, Flutter, Kotlin</p>
                             </div>
                             <div className="text-center p-4">
                                 <div className="text-3xl font-bold text-yellow-400 mb-2">DevOps</div>
