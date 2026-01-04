@@ -32,7 +32,8 @@ import {
   faTwitter,
   faInstagram,
   faYoutube,
-  faWhatsapp
+  faWhatsapp,
+  faUpwork
 } from '@fortawesome/free-brands-svg-icons';
 import emailjs from '@emailjs/browser';
 import propic from '/images/propic.jpg';
@@ -439,6 +440,13 @@ const Home = ({ interval = 5000 }) => {
                 >
                   <FontAwesomeIcon icon={faCode} />
                   View Services
+                </a>
+                <a 
+                  href="https://www.upwork.com/freelancers/~01b91a437444c6df65"
+                  className="group flex items-center gap-3 px-8 py-3 border-2 border-yellow-500 text-yellow-500 font-semibold rounded-xl hover:bg-yellow-500 hover:text-gray-900 transition-all duration-300 hover:scale-105"
+                >
+                  <FontAwesomeIcon icon={faUpwork} />
+                  
                 </a>
               </div>
               
