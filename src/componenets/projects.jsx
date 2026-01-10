@@ -107,7 +107,7 @@ const Projects = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Projects</span>
+            My <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 bg-clip-text text-transparent animate-gradient">Projects</span>
           </h1>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Explore a curated collection of my work. Each project demonstrates technical expertise, 
@@ -219,7 +219,7 @@ const Projects = () => {
         {/* All Projects Grid - Dark Theme */}
         <div className="mb-6">
           <h2 className="text-3xl font-bold text-white mb-10">
-            All <span className="text-gray-400">Projects</span>
+            All <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 bg-clip-text text-transparent animate-gradient">Projects</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
