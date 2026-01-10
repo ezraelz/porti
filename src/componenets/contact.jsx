@@ -19,11 +19,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { 
   faWhatsapp,
-  faTelegram,
-  faSkype,
   faLinkedin,
   faGithub,
-  faTwitter
+  faTwitter,
+  faInstagram
 } from '@fortawesome/free-brands-svg-icons';
 import emailjs from '@emailjs/browser';
 
@@ -76,14 +75,13 @@ const Contact = () => {
   ];
 
   // Social media links
-  const socialLinks = [
-    { icon: faWhatsapp, name: 'WhatsApp', link: 'https://wa.me/251965500734', color: 'hover:text-green-500' },
-    { icon: faTelegram, name: 'Telegram', link: 'https://t.me/yourusername', color: 'hover:text-blue-400' },
-    { icon: faSkype, name: 'Skype', link: 'skype:live:.cid.yourid', color: 'hover:text-blue-500' },
-    { icon: faLinkedin, name: 'LinkedIn', link: 'https://linkedin.com/in/yourprofile', color: 'hover:text-blue-700' },
-    { icon: faGithub, name: 'GitHub', link: 'https://github.com/yourprofile', color: 'hover:text-gray-300' },
-    { icon: faTwitter, name: 'Twitter', link: 'https://twitter.com/yourprofile', color: 'hover:text-blue-400' }
-  ];
+    const socialLinks = [
+      { icon: faGithub, href: 'https://github.com/ezraelz', label: 'GitHub', color: 'hover:text-gray-300' },
+      { icon: faLinkedin, href: 'https://linkedin.com/in/esrael-zerihun', label: 'LinkedIn', color: 'hover:text-blue-600' },
+      { icon: faTwitter, href: 'https://twitter.com/Esra82237692', label: 'Twitter', color: 'hover:text-blue-400' },
+      { icon: faInstagram, href: 'https://instagram.com/hopeesra', label: 'Instagram', color: 'hover:text-pink-500' },
+      { icon: faWhatsapp, href: 'https://wa.me/251965500734', label: 'WhatsApp', color: 'hover:text-green-500' }
+    ];
 
   // Project types
   const projectTypes = [
