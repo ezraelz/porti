@@ -39,6 +39,12 @@ import emailjs from '@emailjs/browser';
 import propic from '/images/propic.jpg';
 import Projects from './projects';
 import { useNavigate } from 'react-router-dom';
+import image1 from '../../public/images/hands.webp';
+import image2 from '../../public/images/coding.jpg';
+import image3 from '../../public/images/pngtree.jpg';
+import image4 from '../../public/images/rear.avif';
+import image5 from '../../public/images/istockphoto.jpg';
+import image6 from '../../public/images/istockphoto1.jpg';
 
 // Custom FAQ Component
 const FaqShow = () => {
@@ -148,10 +154,13 @@ const Home = ({ interval = 5000 }) => {
   const navigate = useNavigate();
   
   const images = [
-    'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    'https://images.unsplash.com/photo-1518834103326-9fd4c5fff6d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+
   ];
   
   const skills = [
