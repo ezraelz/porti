@@ -160,7 +160,6 @@ const Home = ({ interval = 5000 }) => {
     image4,
     image5,
     image6,
-
   ];
   
   const skills = [
@@ -493,7 +492,7 @@ const Home = ({ interval = 5000 }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Technical <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Expertise</span>
+              Technical <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 bg-clip-text text-transparent animate-gradient">Expertise</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Mastery of modern technologies and frameworks that power today's digital solutions
@@ -579,7 +578,7 @@ const Home = ({ interval = 5000 }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Professional <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Services</span>
+              Professional <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 bg-clip-text text-transparent animate-gradient">Services</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Comprehensive digital solutions tailored to your business needs and goals
@@ -623,7 +622,7 @@ const Home = ({ interval = 5000 }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Client <span className="text-yellow-400">Testimonials</span>
+              Client <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 bg-clip-text text-transparent animate-gradient">Testimonials</span>
             </h2>
             <p className="text-gray-400">What clients say about working with me</p>
           </div>
