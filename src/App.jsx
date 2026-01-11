@@ -56,7 +56,7 @@ function App() {
               <Route path="/serviceSinglepage/:id" element={<ServiceSinglePage />} />
               <Route path="/faq" element={<Faq />} />
               <Route path="/contact" element={<Contact />} />
-              
+
               <Route path="/admin" element={<AdminDashoard />} />
             </Routes>
           </Suspense>

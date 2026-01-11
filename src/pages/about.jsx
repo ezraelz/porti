@@ -26,7 +26,7 @@ import {
   faGithub,
 
 } from '@fortawesome/free-brands-svg-icons';
-import propic from '/images/propic.jpg'
+import propic from '../images/propic.jpg';
 
 const About = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);

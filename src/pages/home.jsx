@@ -36,15 +36,15 @@ import {
   faUpwork
 } from '@fortawesome/free-brands-svg-icons';
 import emailjs from '@emailjs/browser';
-import propic from '/images/propic.jpg';
+import propic from '../images/propic.jpg';
 import Projects from './projects';
 import { useNavigate } from 'react-router-dom';
-import image1 from '../../public/images/hands.webp';
-import image2 from '../../public/images/coding.jpg';
-import image3 from '../../public/images/pngtree.jpg';
-import image4 from '../../public/images/rear.avif';
-import image5 from '../../public/images/istockphoto.jpg';
-import image6 from '../../public/images/istockphoto1.jpg';
+import image1 from '../images/hands.webp';
+import image2 from '../images/coding.jpg';
+import image3 from '../images/pngtree.jpg';
+import image4 from '../images/rear.avif';
+import image5 from '../images/istockphoto.jpg';
+import image6 from '../images/istockphoto1.jpg';
 
 // Custom FAQ Component
 const FaqShow = () => {
