@@ -9,7 +9,7 @@ import {
   faComments
 } from '@fortawesome/free-solid-svg-icons';
 import emailjs from '@emailjs/browser';
-import FaqShow from './FaqShow';
+import FaqShow from '../componenets/FaqShow';
 
 const Faq = () => {
   const formRef = useRef();

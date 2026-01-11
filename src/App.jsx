@@ -10,11 +10,13 @@ import Loading from './componenets/loading';
 import ServiceSinglePage from './componenets/serviceSinglePage';
 
 // Lazy load components
-const Home = lazy(() => import('./componenets/home'));
-const About = lazy(() => import('./componenets/about'));
-const Services = lazy(() => import('./componenets/services'));
-const Faq = lazy(() => import('./componenets/faq'));
-const Contact = lazy(() => import('./componenets/contact'));
+const Home = lazy(() => import('./pages/home'));
+const About = lazy(() => import('./pages/about'));
+const Services = lazy(() => import('./pages/services'));
+const Faq = lazy(() => import('./pages/faq'));
+const Contact = lazy(() => import('./pages/contact'));
+
+const AdminDashoard = lazy(() => import('./pages/admin/adminDashoard'));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -54,6 +56,8 @@ function App() {
               <Route path="/serviceSinglepage/:id" element={<ServiceSinglePage />} />
               <Route path="/faq" element={<Faq />} />
               <Route path="/contact" element={<Contact />} />
+              
+              <Route path="/admin" element={<AdminDashoard />} />
             </Routes>
           </Suspense>
         </main>

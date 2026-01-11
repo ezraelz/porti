@@ -114,62 +114,6 @@ const About = () => {
         }
     };
 
-    // Circular Progress Component
-    const CircularProgress = ({ percentage, skill, icon, color }) => {
-        const radius = 90;
-        const circumference = 2 * Math.PI * radius;
-        const offset = circumference - (percentage / 100) * circumference;
-
-        return (
-            <div className="relative group">
-                <div className="relative w-48 h-48 mx-auto">
-                    <svg className="w-full h-full transform -rotate-90" viewBox="0 0 200 200">
-                        <circle
-                            cx="100"
-                            cy="100"
-                            r={radius}
-                            stroke="rgba(255,255,255,0.1)"
-                            strokeWidth="12"
-                            fill="transparent"
-                        />
-                        <circle
-                            cx="100"
-                            cy="100"
-                            r={radius}
-                            stroke={`url(#${skill.toLowerCase().replace(/\s+/g, '-')}-gradient)`}
-                            strokeWidth="12"
-                            fill="transparent"
-                            strokeDasharray={circumference}
-                            strokeDashoffset={offset}
-                            strokeLinecap="round"
-                            className="transition-all duration-1000 ease-out"
-                        />
-                        <defs>
-                            <linearGradient id={`${skill.toLowerCase().replace(/\s+/g, '-')}-gradient`} x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#f59e0b" />
-                                <stop offset="50%" stopColor="#ea580c" />
-                                <stop offset="100%" stopColor="#3b82f6" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                        <div className={`text-4xl font-bold bg-gradient-to-r ${color} bg-clip-text text-transparent`}>
-                            {percentage}%
-                        </div>
-                        <FontAwesomeIcon 
-                            icon={icon} 
-                            className={`text-xl mt-2 bg-gradient-to-r ${color} bg-clip-text text-transparent`}
-                        />
-                        <div className="text-sm text-gray-300 mt-1">{skill}</div>
-                    </div>
-                </div>
-                
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-blue-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
-            </div>
-        );
-    };
-
     // Skill categories
     const skillCategories = ['all', 'frontend', 'backend', 'database', 'mobile', 'devops'];
     const filteredSkills = activeTab === 'all' 
