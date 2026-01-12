@@ -8,6 +8,10 @@ import Reaction from './componenets/reaction';
 import './index.css';
 import Loading from './componenets/loading';
 import ServiceSinglePage from './componenets/serviceSinglePage';
+import ProtectedRoute from './pages/auth/protectedRoute';
+import AdminRoutes from './routes/adminRoutes';
+import AdminLayout from './componenets/layouts/adminLayout';
+import Login from './pages/auth/login';
 
 // Lazy load components
 const Home = lazy(() => import('./pages/home'));
@@ -56,8 +60,18 @@ function App() {
               <Route path="/serviceSinglepage/:id" element={<ServiceSinglePage />} />
               <Route path="/faq" element={<Faq />} />
               <Route path="/contact" element={<Contact />} />
+              
+              <Route path='/login' element={<Login/>} />
 
-              <Route path="/admin" element={<AdminDashoard />} />
+              <Route
+                path='/admin/*'
+                element={
+                <ProtectedRoute>
+                  <AdminLayout/>
+                </ProtectedRoute>}
+              >
+                <Route path="*" element={<AdminRoutes /> }/>
+              </Route>
             </Routes>
           </Suspense>
         </main>

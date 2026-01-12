@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { config } from 'npm';
 import React from 'react';
 
 const api = axios.create({
@@ -19,7 +18,7 @@ api.interceptors.request.use((config) => {
 });
 
 // 🚀 Auto-refresh if 401
-axiosInstance.interceptors.response.use(
+api.interceptors.response.use(
   (response) => response,
   async (error) => {
     const originalRequest = error.config;

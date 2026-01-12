@@ -3,9 +3,10 @@ import {
   useContext,
   useEffect,
   useState,
-  type ReactNode,
   useCallback,
 } from "react";
+import type { ReactNode } from "react"
+
 import api from "../service/api";
 import type { AuthContextType, User } from "./authTypes";
 
