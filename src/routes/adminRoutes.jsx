@@ -7,7 +7,7 @@ const AdminRoutes = () => {
   return (
     <div>
         <Routes>
-            <Route path='admin' element={<AdminDashoard/>}/>
+            <Route path='' element={<AdminDashoard/>}/>
             <Route path='login' element={<Login />}/>
         </Routes>
     </div>

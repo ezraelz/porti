@@ -57,17 +57,18 @@ const Login = () => {
     setIsLoading(true);
     
     try {
-      // Simulate API call - replace with your actual authentication logic
+      // Check your auth context - login might return different structure
       const response = await login(formData.username, formData.password);
-
-      // Store auth token or user data (in real app)
-      localStorage.setItem('username', response.username);
       
-      // Show success message (you could use a toast notification)
+      // Show success message
       alert('Login successful!');
+      console.log('Login successful!', response);
+      
       setLoggedIn(true);
     } catch (error) {
-      setErrors('An error occurred. Please try again.' , error);
+      setErrors({ 
+        general: `Login failed: ${error.message || 'Please check your credentials'}` 
+      });
     } finally {
       setIsLoading(false);
     }

@@ -12,6 +12,8 @@ import ProtectedRoute from './pages/auth/protectedRoute';
 import AdminRoutes from './routes/adminRoutes';
 import AdminLayout from './componenets/layouts/adminLayout';
 import Login from './pages/auth/login';
+import PublicRoutes from './routes/publicRoutes';
+import BaseLayout from './componenets/layouts/baseLayout';
 
 // Lazy load components
 const Home = lazy(() => import('./pages/home'));
@@ -49,20 +51,18 @@ function App() {
   return (
     <HashRouter>
       <div className={`min-h-screen transition-colors duration-300 ${isLoading ? 'bg-gray-900' : 'bg-white'}`}>
-        <Navbar />
 
         <main className="pt-16">
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/serviceSinglepage/:id" element={<ServiceSinglePage />} />
-              <Route path="/faq" element={<Faq />} />
-              <Route path="/contact" element={<Contact />} />
-              
-              <Route path='/login' element={<Login/>} />
-
+              <Route 
+                path='/*'
+                element={
+                  <BaseLayout />
+                }   
+              >
+                <Route path='*' element={<PublicRoutes/>} />
+              </Route>
               <Route
                 path='/admin/*'
                 element={
@@ -77,7 +77,6 @@ function App() {
         </main>
 
         <Reaction />
-        <Footer />
       </div>
     </HashRouter>
   );
