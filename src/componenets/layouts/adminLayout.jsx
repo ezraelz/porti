@@ -8,12 +8,17 @@ import { Menu, X } from 'lucide-react';
 // Define portfolio-specific route titles
 const routeTitles = {
   '/admin': 'Portfolio Dashboard',
+  '/admin': 'Portfolio Dashboard',
   '/admin/projects': 'Project Management',
   '/admin/messages': 'Visitor Messages',
   '/admin/analytics': 'Portfolio Analytics',
   '/admin/settings': 'Portfolio Settings',
   '/admin/skills': 'Skills & Experience',
   '/admin/testimonials': 'Testimonials',
+  '/admin/experience': 'Experience',
+  '/admin/resume': 'Resume/CV',
+  '/admin/subscribers': 'Subscribers',
+  '/admin/profile': 'Profile',
 };
 
 const AdminLayout = () => {
@@ -27,9 +32,32 @@ const AdminLayout = () => {
         return title;
       }
     }
-    return 'Portfolio Dashboard';
+    return 'Dashboard';
   };
 
+  // Get breadcrumb based on path
+  const getBreadcrumb = () => {
+    const pathSegments = location.pathname.split('/').filter(segment => segment);
+    if (pathSegments.length <= 2) return null;
+    
+    return (
+      <nav className="flex" aria-label="Breadcrumb">
+        <ol className="flex items-center space-x-2">
+          <li>
+            <span className="text-gray-500">Portfolio</span>
+          </li>
+          {pathSegments.slice(1).map((segment, index) => (
+            <li key={index} className="flex items-center">
+              <span className="mx-2 text-gray-400">/</span>
+              <span className={`${index === pathSegments.length - 2 ? 'text-blue-600 font-medium' : 'text-gray-500'}`}>
+                {segment.charAt(0).toUpperCase() + segment.slice(1)}
+              </span>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
@@ -46,7 +74,7 @@ const AdminLayout = () => {
       
       <div className="flex">
         {/* Sidebar - Desktop */}
-        <div className="hidden lg:block w-64 min-h-screen">
+        <div className="hidden lg:block fixed top-0 left-0 h-screen w-64 z-30 pt-16 overflow-y-scroll">
           <AdminSidebar />
         </div>
         
@@ -56,25 +84,16 @@ const AdminLayout = () => {
           lg:hidden
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         `}>
-          <div className="h-full bg-gradient-to-b from-gray-900 to-gray-800">
-            <div className="flex justify-between items-center p-4 border-b border-gray-700">
-              <span className="text-white font-bold text-lg">Portfolio Admin</span>
-              <button 
-                onClick={() => setSidebarOpen(false)}
-                className="p-2 text-gray-400 hover:text-white"
-              >
-                <X size={24} />
-              </button>
-            </div>
+          <div className="h-full">
             <AdminSidebar onClose={() => setSidebarOpen(false)} />
           </div>
         </div>
         
         {/* Main Content */}
-        <main className="flex-1">
-          <div className="p-4 md:p-6">
+        <main className="flex-1 lg:ml-64 ">
+          <div className="p-4 md:p-6 lg:p-8">
             {/* Page Header */}
-            <div className="mb-8">
+            <div className="mb-6">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
                   <div className="flex items-center space-x-3 mb-2">
@@ -84,7 +103,14 @@ const AdminLayout = () => {
                     >
                       <Menu size={20} />
                     </button>
+                    <div>
+                      <h1 className="text-2xl md:text-3xl font-bold text-gray-800">{getPageTitle()}</h1>
+                      {getBreadcrumb()}
+                    </div>
                   </div>
+                  <p className="text-gray-600 text-sm md:text-base">
+                    Manage your portfolio content, messages, and analytics
+                  </p>
                 </div>
                 
                 {/* Quick Stats Bar */}
@@ -100,16 +126,10 @@ const AdminLayout = () => {
               </div>
             </div>
             
-            {/* Page Content Container */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 overflow-hidden">
-              {/* Gradient Header Strip */}
-              <div className="h-2 bg-gradient-to-r from-blue-500 to-purple-500"></div>
-              
               {/* Content Area */}
-              <div className="p-4 md:p-6 lg:p-8">
+              <div className="p-0 md:p-0">
                 <Outlet />
               </div>
-            </div>
             
             {/* Footer Note */}
             <div className="mt-6 text-center text-gray-500 text-sm">

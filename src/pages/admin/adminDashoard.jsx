@@ -68,10 +68,6 @@ const AdminDashboard = () => {
     <div className="p-6 space-y-6">
       {/* Header */}
       <div className="flex justify-between items-center">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-800">Portfolio Dashboard</h1>
-          <p className="text-gray-600 mt-1">Monitor your portfolio performance and engagement</p>
-        </div>
         <div className="flex items-center space-x-4">
           <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2">
             <BarChart3 size={20} />

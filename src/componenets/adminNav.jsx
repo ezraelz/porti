@@ -11,8 +11,10 @@ import {
   HelpCircle
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/authContext';
 
 const AdminNav = ({ onMenuClick }) => {
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [darkMode, setDarkMode] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
@@ -34,7 +36,7 @@ const AdminNav = ({ onMenuClick }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-gray-900 to-gray-800 text-white backdrop-blur-md border-b border-gray-200/50 shadow-sm">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
@@ -55,27 +57,26 @@ const AdminNav = ({ onMenuClick }) => {
               </div>
               <div className="hidden md:block">
                 <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Portfolio Admin
+                  Dashboard
                 </h1>
-                <p className="text-xs text-gray-500">Manage your digital presence</p>
               </div>
             </Link>
           </div>
 
           {/* Center Section: Search Bar */}
-          <div className="hidden lg:flex flex-1 max-w-2xl mx-8">
+          <div className="hidden lg:flex flex-1 max-w-2xl mx-8 bg-gradient-to-b from-gray-900 to-gray-800 text-white">
             <div className="relative w-full">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-gradient-to-b from-gray-900 to-gray-800 text-white" size={20} />
               <input
                 type="text"
                 placeholder="Search projects, messages, or settings..."
-                className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 bg-gradient-to-b from-gray-900 to-gray-800 text-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
           </div>
 
           {/* Right Section: Actions & Profile */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 text-white">
             
             {/* Dark Mode Toggle */}
             <button
@@ -166,11 +167,11 @@ const AdminNav = ({ onMenuClick }) => {
                 className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100"
               >
                 <div className="w-9 h-9 bg-gradient-to-br from-gray-700 to-gray-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">JD</span>
+                  <span className="text-white font-semibold text-sm"></span>
                 </div>
                 <div className="hidden md:block text-left">
-                  <p className="text-sm font-medium text-gray-800">John Doe</p>
-                  <p className="text-xs text-gray-500">Admin</p>
+                  <p className="text-sm font-medium text-gray-800">{user.full_name}</p>
+                  <p className="text-xs text-gray-500">{user.username}</p>
                 </div>
                 <ChevronDown size={16} className="text-gray-500" />
               </button>
@@ -184,8 +185,8 @@ const AdminNav = ({ onMenuClick }) => {
                   />
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-20">
                     <div className="px-4 py-3 border-b border-gray-100">
-                      <p className="font-medium text-gray-800">John Doe</p>
-                      <p className="text-sm text-gray-500">john@portfolio.com</p>
+                      <p className="font-medium text-gray-800">{user.username}</p>
+                      <p className="text-sm text-gray-500">{user.email}</p>
                     </div>
                     <Link
                       to="/admin/profile"

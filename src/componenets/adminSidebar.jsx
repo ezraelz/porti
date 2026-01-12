@@ -13,16 +13,18 @@ import {
   X
 } from 'lucide-react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/authContext';
 
 const AdminSidebar = ({ onClose }) => {
   const navigate = useNavigate();
+  const { user } = useAuth();
   
   // Portfolio-specific navigation groups
   const navGroups = [
     {
       title: 'Overview',
       items: [
-        { path: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+        { path: '/admin', icon: LayoutDashboard, label: 'Dashboard' },
         { path: '/admin/analytics', icon: BarChart3, label: 'Analytics' },
       ]
     },
@@ -58,7 +60,7 @@ const AdminSidebar = ({ onClose }) => {
   };
 
   return (
-    <aside className="w-64 h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex flex-col relative">
+    <aside className="fixed w-64 h-160 bg-gradient-to-b from-gray-900 to-gray-800 text-white flex flex-col relative">
       {/* Mobile Close Button */}
       {onClose && (
         <button 
@@ -68,75 +70,59 @@ const AdminSidebar = ({ onClose }) => {
           <X size={20} />
         </button>
       )}
-      
-      {/* Logo/Brand Section */}
-      <div className="p-6 border-b border-gray-700">
-        <div className="flex items-center space-x-3">
-          <div className="relative">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-xl">P</span>
-            </div>
-            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-gray-900"></div>
-          </div>
-          <div>
-            <h1 className="text-xl font-bold">Portfolio Admin</h1>
-            <p className="text-xs text-gray-400 mt-1">Manage your digital presence</p>
-          </div>
-        </div>
-      </div>
 
       {/* User Profile Summary */}
       <div className="p-4 border-b border-gray-700">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-600 rounded-full flex items-center justify-center">
-            <span className="font-semibold">JD</span>
+            <span className="font-semibold"></span>
           </div>
           <div className="flex-1 min-w-0">
-            <p className="font-medium truncate">John Doe</p>
-            <p className="text-xs text-gray-400 truncate">john@portfolio.com</p>
+            <p className="font-medium truncate">{user.username}</p>
+            <p className="text-xs text-gray-400 truncate">{user.email}</p>
           </div>
         </div>
       </div>
 
       {/* Navigation */}
       {navGroups.map((group, index) => (
-  <div key={index} className="mb-8">
-    <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-2">
-      {group.title}
-    </h3>
-    <div className="space-y-1">
-      {group.items.map((item) => {
-        const Icon = item.icon;
-        return (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            onClick={onClose}
-            className={({ isActive }) => `
-              flex items-center space-x-3 px-3 py-3 rounded-lg transition-all duration-200
-              ${isActive 
-                ? 'bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-white border-l-4 border-blue-500' 
-                : 'text-gray-300 hover:bg-gray-700/50 hover:text-white hover:translate-x-1'
-              }
-            `}
-          >
-            {({ isActive: active }) => (
-              <>
-                <Icon size={20} className={active ? 'text-blue-400' : 'text-gray-400'} />
-                <span className="font-medium">{item.label}</span>
-                {item.path === '/admin/messages' && (
-                  <span className="ml-auto bg-red-500 text-white text-xs px-2 py-1 rounded-full">
-                    3
-                  </span>
-                )}
-              </>
-            )}
-          </NavLink>
-        );
-      })}
-    </div>
-  </div>
-))}
+        <div key={index} className="mb-8 ">
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-2">
+            {group.title}
+          </h3>
+          <div className="space-y-1">
+            {group.items.map((item) => {
+              const Icon = item.icon;
+              return (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  onClick={onClose}
+                  className={({ isActive }) => `
+                    flex items-center space-x-3 px-3 py-3 rounded-lg transition-all duration-200
+                    ${isActive 
+                      ? 'bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-white border-l-4 border-blue-500' 
+                      : 'text-gray-300 hover:bg-gray-700/50 hover:text-white hover:translate-x-1'
+                    }
+                  `}
+                >
+                  {({ isActive: active }) => (
+                    <>
+                      <Icon size={20} className={active ? 'text-blue-400' : 'text-gray-400'} />
+                      <span className="font-medium">{item.label}</span>
+                      {item.path === '/admin/messages' && (
+                        <span className="ml-auto bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+                          3
+                        </span>
+                      )}
+                    </>
+                  )}
+                </NavLink>
+              );
+            })}
+          </div>
+        </div>
+      ))}
 
       {/* Quick Stats */}
       <div className="p-4 border-t border-gray-700">
