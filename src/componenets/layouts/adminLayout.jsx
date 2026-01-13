@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react';
 
 // Define portfolio-specific route titles
 const routeTitles = {
-  '/admin': 'Portfolio Dashboard',
+  '/': 'Portfolio Dashboard',
   '/admin': 'Portfolio Dashboard',
   '/admin/projects': 'Project Management',
   '/admin/messages': 'Visitor Messages',
