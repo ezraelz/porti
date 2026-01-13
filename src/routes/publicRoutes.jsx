@@ -14,7 +14,6 @@ const Faq = lazy(() => import('../pages/faq'));
 const Contact = lazy(() => import('../pages/contact'));
 
 const PublicRoutes = () => {
-  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <Routes>
@@ -25,7 +24,6 @@ const PublicRoutes = () => {
         <Route path="/faq" element={<Faq />} />
         <Route path="/contact" element={<Contact />} />
         
-        <Route path='/login' element={<Login/>} />
     </Routes>
   );
 }

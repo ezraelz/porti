@@ -90,7 +90,7 @@ const AdminLayout = () => {
         </div>
         
         {/* Main Content */}
-        <main className="flex-1 lg:ml-64 ">
+        <main className="flex-1 lg:ml-64 mt-16">
           <div className="p-4 md:p-6 lg:p-8">
             {/* Page Header */}
             <div className="mb-6">
@@ -127,7 +127,7 @@ const AdminLayout = () => {
             </div>
             
               {/* Content Area */}
-              <div className="p-0 md:p-0">
+              <div className="p-0 md:p-0 ">
                 <Outlet />
               </div>
             

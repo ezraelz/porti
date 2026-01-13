@@ -52,9 +52,11 @@ function App() {
     <HashRouter>
       <div className={`min-h-screen transition-colors duration-300 ${isLoading ? 'bg-gray-900' : 'bg-white'}`}>
 
-        <main className="pt-16">
+        <main>
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
+              <Route path='/login' element={<Login/>} />
+              
               <Route 
                 path='/*'
                 element={

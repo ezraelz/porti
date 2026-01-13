@@ -373,7 +373,7 @@ const Home = ({ interval = 5000 }) => {
       <section 
         className="relative flex min-h-screen items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.96)), url(${images[currentIndex]})`,
+          backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.81), rgba(15, 23, 42, 0.88)), url(${images[currentIndex]})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
@@ -383,8 +383,8 @@ const Home = ({ interval = 5000 }) => {
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-transparent to-blue-500/10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-500/5 via-transparent to-transparent" />
         
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:items-center py-10 lg:py-0">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 lg:py-20">
+          <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:items-center py-10 lg:py-4">
             {/* Profile Image */}
             <div className="relative">
               <div className="absolute -inset-4 animate-pulse rounded-full bg-gradient-to-r from-yellow-500 via-orange-500 to-blue-500 opacity-20 blur-xl" />
@@ -428,7 +428,7 @@ const Home = ({ interval = 5000 }) => {
                 </span>
               </h1>
               
-              <p className="mb-8 text-lg leading-relaxed text-gray-400 lg:text-xl">
+              <p className="mb-8 text-lg leading-relaxed text-gray-300 lg:text-xl">
                 I craft <span className="font-semibold text-yellow-400">digital experiences</span> that blend 
                 innovative design with <span className="font-semibold text-orange-400">cutting-edge technology</span> 
                 to drive business success and user delight.
@@ -477,7 +477,7 @@ const Home = ({ interval = 5000 }) => {
           </div>
           
           {/* Scroll Indicator */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+          <div className="absolute bottom-20 left-1/2 -translate-x-1/2">
             <div className="animate-bounce">
               <div className="flex h-10 w-6 justify-center rounded-full border-2 border-yellow-500">
                 <div className="mt-2 h-3 w-1 animate-pulse rounded-full bg-yellow-500" />
