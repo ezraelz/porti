@@ -2,9 +2,7 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import '../index.css';
-import Loading from '../componenets/loading';
 import ServiceSinglePage from '../componenets/serviceSinglePage';
-import Login from '../pages/auth/login';
 
 // Lazy load components
 const Home = lazy(() => import('../pages/home'));

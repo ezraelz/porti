@@ -102,7 +102,7 @@ const Projects = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-black py-10 sm:px-6">
+    <div className="min-h-screen py-10 sm:px-6">
       <div className="max-w-9xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">

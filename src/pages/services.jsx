@@ -117,7 +117,7 @@ const Services = () => {
       title: 'Cloud Solutions',
       icon: faCloud,
       description: '',
-      features: ['Serverless Architecture', 'Microservices', 'CI/CD Pipelines'],
+      features: [ 'CI/CD Pipelines'],
       color: 'from-orange-500 to-red-500'
     },
     {
@@ -131,7 +131,7 @@ const Services = () => {
       title: 'Database Design',
       icon: faDatabase,
       description: 'Optimized data architecture',
-      features: ['SQL & NoSQL', 'Data Modeling', 'Performance Tuning'],
+      features: ['SQL & Postgress', 'Data Modeling', 'Performance Tuning'],
       color: 'from-teal-500 to-cyan-500'
     },
     {
@@ -145,10 +145,10 @@ const Services = () => {
 
   // Technology Stack
   const techStack = {
-    frontend: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Material-UI', 'Bootstrap'],
-    backend: ['Node.js', 'Django', 'Python', 'Express.js', 'PostgreSQL', 'MySQL', 'Java'],
+    frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS','Bootstrap'],
+    backend: ['Node.js', 'Django', 'Python', 'Express.js', 'PostgreSQL', 'Java'],
     mobile: ['React Native', 'Flutter', 'iOS Swift', 'Android Kotlin'],
-    tools: ['Git', 'Docker', 'Figma', 'Jira', 'VS Code']
+    tools: ['Git', 'Docker', 'Figma', 'VS Code']
   };
 
   // Process Steps
@@ -235,7 +235,7 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-900 to-black">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-900 to-black pt-16">
       {/* Hero Section */}
       <section className="relative pt-24 pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 via-transparent to-blue-500/5" />

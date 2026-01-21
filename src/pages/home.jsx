@@ -164,12 +164,12 @@ const Home = ({ interval = 5000 }) => {
   
   const skills = [
     { name: 'React.js', percentage: 90, gradient: 'from-cyan-500 to-blue-500', icon: faCode },
-    { name: 'Next.js', percentage: 85, gradient: 'from-gray-600 to-gray-800', icon: faRocket },
-    { name: 'TypeScript', percentage: 80, gradient: 'from-blue-500 to-indigo-500', icon: faCode },
-    { name: 'Node.js', percentage: 82, gradient: 'from-green-500 to-emerald-500', icon: faServer },
-    { name: 'Python/Django', percentage: 88, gradient: 'from-green-400 to-green-600', icon: faServer },
-    { name: 'Tailwind CSS', percentage: 95, gradient: 'from-teal-500 to-cyan-500', icon: faPaintBrush },
     { name: 'React Native', percentage: 78, gradient: 'from-indigo-500 to-purple-500', icon: faMobileAlt },
+    { name: 'Django', percentage: 88, gradient: 'from-green-400 to-green-600', icon: faServer },
+    { name: 'TypeScript', percentage: 80, gradient: 'from-blue-500 to-indigo-500', icon: faCode },
+    { name: 'Next.js', percentage: 85, gradient: 'from-gray-600 to-gray-800', icon: faRocket },
+    { name: 'Node.js', percentage: 82, gradient: 'from-green-500 to-emerald-500', icon: faServer },
+    { name: 'Tailwind CSS', percentage: 95, gradient: 'from-teal-500 to-cyan-500', icon: faPaintBrush },
     { name: 'Git/Github', percentage: 70, gradient: 'from-orange-500 to-yellow-500', icon: faGithub }
   ];
   
@@ -383,7 +383,7 @@ const Home = ({ interval = 5000 }) => {
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-transparent to-blue-500/10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-500/5 via-transparent to-transparent" />
         
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 lg:py-20">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 py-20 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:items-center py-10 lg:py-4">
             {/* Profile Image */}
             <div className="relative">
@@ -520,7 +520,7 @@ const Home = ({ interval = 5000 }) => {
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-6">
                 <h4 className="text-xl font-semibold text-white mb-4">Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
-                  {['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'MySQL','Docker', 'Git', 'HTML5', 'CSS3', 'JavaScript', 'Python', 'Java'].map((tech, idx) => (
+                  {['React', 'React Native','Next.js', 'TypeScript', 'Node.js', 'Django', 'PostgreSQL', 'MySQL','Docker', 'Git', 'HTML5', 'CSS3', 'JavaScript', 'Python', 'Java', 'Bootstrap'].map((tech, idx) => (
                     <span key={idx} className="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm hover:bg-gray-800 transition-colors">
                       {tech}
                     </span>
@@ -801,28 +801,7 @@ const Home = ({ interval = 5000 }) => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-800 py-8">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                Esrael Zerihun
-              </h3>
-              <p className="text-sm text-gray-400">Fullstack Developer & UI/UX Designer</p>
-            </div>
-            
-            <div className="text-center md:text-right">
-              <p className="text-gray-500 text-sm">
-                © {new Date().getFullYear()} All rights reserved.
-              </p>
-              <p className="text-gray-500 text-sm mt-1">
-                Crafted with ❤️ using React & Tailwind CSS
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 };

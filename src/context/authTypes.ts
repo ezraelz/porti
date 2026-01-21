@@ -23,5 +23,8 @@ export interface AuthContextType {
   logout: () => void;
   updateUser: (updates: Partial<User>) => Promise<User>;
   refreshUser: () => Promise<void>;
+  PageViews: (page: string) => Promise<void>;
+  fetchPageViews: () => Promise<void>;
+  pageView: null;
   isAuthenticated: boolean;
 }

@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import Login from '../pages/auth/login'
-import AdminDashoard from '../pages/admin/adminDashoard'
+const AdminDashoard = lazy(() => import('../pages/admin/adminDashoard'))
+const Analytics = lazy(()=> import('../pages/admin/analytics'))
 
 const AdminRoutes = () => {
   return (
     <div>
         <Routes>
             <Route path='' element={<AdminDashoard/>}/>
-            <Route path='login' element={<Login />}/>
+            <Route path='analytics' element={<Analytics />}/>
         </Routes>
     </div>
   )

@@ -131,7 +131,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-900 to-black">
+    <div className="min-h-screen pt-16 bg-gradient-to-b from-gray-900 via-gray-900 to-black">
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-transparent to-blue-500/10" />
@@ -194,7 +194,7 @@ const Contact = () => {
                   <p className="text-gray-400 mb-6 text-sm">
                     Follow for updates, tips, and behind-the-scenes content
                   </p>
-                  <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+                  <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 cursor-pointer">
                     {socialLinks.map((social, index) => (
                       <a
                         key={index}
@@ -456,7 +456,7 @@ const Contact = () => {
 
           <div className="text-center mt-12">
             <a
-              href="/faq"
+              href="/#faq"
               className="inline-flex items-center gap-2 px-6 py-3 border-2 border-yellow-500 text-yellow-500 rounded-lg hover:bg-yellow-500 hover:text-gray-900 transition-colors"
             >
               <FontAwesomeIcon icon={faComments} />

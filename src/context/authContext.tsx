@@ -10,11 +10,39 @@ import type { ReactNode } from "react"
 import api from "../service/api";
 import type { AuthContextType, User } from "./authTypes";
 
+type PageViewPayload = {
+  page: string;
+};
+
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [pageView, setPageView] = useState(null);
   const [loading, setLoading] = useState(true);
+  
+
+  /* 🔄 Fetch current page view */
+  const fetchPageViews = useCallback(async () : Promise<void> => {
+    try {
+      const res = await api.get("/total-view/");
+      setPageView(res.data);
+      return res.data;
+    } catch (error) {
+      console.error("Failed to fetch page view:", error);
+    }
+  }, []);
+
+  /* 🔄 Fetch current page view */
+  const PageViews = useCallback(async (page: string) : Promise<void> => {
+    try {
+      await api.post<PageViewPayload>("/track-view/", 
+        page, 
+     );
+    } catch (error) {
+      console.error("Failed to track page view:", error);
+    }
+  }, []);
 
   /* 🔄 Fetch current user */
   const fetchCurrentUser = useCallback(async (): Promise<User | null> => {
@@ -167,6 +195,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     logout,
     updateUser,
     refreshUser,
+    PageViews,
+    fetchPageViews,
+    pageView,
     isAuthenticated: !!user,
   };
 

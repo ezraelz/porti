@@ -33,10 +33,11 @@ import {
   faGraduationCap,
   faTools
 } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 const ServiceSinglePage = () => {
   const { id } = useParams();
+  const { pathname } = useLocation();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
   const [serviceData, setServiceData] = useState(null);
@@ -154,18 +155,7 @@ const ServiceSinglePage = () => {
       
       // Case Studies / Examples
       caseStudies: [
-        {
-          title: 'Fintech Dashboard Redesign',
-          description: 'Redesigned complex financial dashboard for better usability',
-          results: 'Increased user engagement by 65%',
-          tech: ['Figma', 'UserTesting', 'Design System']
-        },
-        {
-          title: 'E-commerce Mobile App',
-          description: 'Complete UX overhaul for mobile shopping experience',
-          results: 'Reduced cart abandonment by 40%',
-          tech: ['Sketch', 'Principle', 'Adobe XD']
-        }
+       
       ],
       
       // Stats
@@ -809,7 +799,7 @@ const ServiceSinglePage = () => {
               </p>
             </div>
             
-            <div className={`mt-10 p-6 bg-gradient-to-r ${gradientColor}/10 rounded-xl border ${textColor.replace('text-', 'border-')}/20`}>
+            <div className={`mt-10 p-6 bg-gradient-to-r ${gradientColor}/50 rounded-xl border ${textColor.replace('text-', 'border-')}/20`}>
               <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <FontAwesomeIcon icon={faCheckCircle} className="text-green-500" />
                 What You'll Get
@@ -1148,7 +1138,7 @@ const ServiceSinglePage = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 overflow-hidden">
+      <section className="relative py-10 lg:pt-20 overflow-hidden">
         <div className={`absolute inset-0 bg-gradient-to-br ${gradientColor.replace('to', 'to').replace('from', 'from')}/5 via-transparent to-transparent`} />
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
@@ -1168,7 +1158,7 @@ const ServiceSinglePage = () => {
               {serviceData.description}
             </p>
             
-            <div className="flex flex-wrap gap-4 mb-10">
+            <div className="flex flex-wrap gap-4 mb-5">
               <button
                 onClick={() => navigate('/contact')}
                 className={`group px-8 py-3 bg-gradient-to-r ${gradientColor} text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 flex items-center gap-3`}
@@ -1191,16 +1181,6 @@ const ServiceSinglePage = () => {
                 Schedule Call
               </button>
             </div>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {serviceData.stats.map((stat, index) => (
-                <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-gray-800">
-                  <div className={`text-2xl font-bold ${textColor}`}>{stat.value}</div>
-                  <div className="text-sm text-gray-400 mt-1">{stat.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -1214,8 +1194,8 @@ const ServiceSinglePage = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-6 py-4 font-medium transition-all duration-300 whitespace-nowrap border-b-2 ${
-                  activeTab === tab
-                    ? `${textColor.replace('text-', 'border-')} ${textColor}`
+                  activeTab === tab.id
+                    ? `${textColor}`
                     : 'border-transparent text-gray-400 hover:text-gray-300'
                 }`}
               >

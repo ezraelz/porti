@@ -14,6 +14,7 @@ import AdminLayout from './componenets/layouts/adminLayout';
 import Login from './pages/auth/login';
 import PublicRoutes from './routes/publicRoutes';
 import BaseLayout from './componenets/layouts/baseLayout';
+import { useAuth } from './context/authContext';
 
 // Lazy load components
 const Home = lazy(() => import('./pages/home'));
@@ -33,7 +34,7 @@ const LoadingFallback = () => (
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-
+  const { user } = useAuth();
 
   useEffect(() => {
     // Simulate a network request

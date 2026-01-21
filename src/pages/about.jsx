@@ -36,7 +36,7 @@ const About = () => {
     // Skills data
     const skills = [
         { name: 'HTML5', percentage: 95, icon: faCode, color: 'from-orange-500 to-red-500', category: 'frontend' },
-        { name: 'CSS3/SCSS', percentage: 90, icon: faPalette, color: 'from-blue-500 to-cyan-500', category: 'frontend' },
+        { name: 'CSS3', percentage: 90, icon: faPalette, color: 'from-blue-500 to-cyan-500', category: 'frontend' },
         { name: 'JavaScript', percentage: 85, icon: faCode, color: 'from-yellow-500 to-orange-500', category: 'frontend' },
         { name: 'React.js', percentage: 80, icon: faCode, color: 'from-cyan-500 to-blue-500', category: 'frontend' },
         { name: 'Next.js', percentage: 75, icon: faRocket, color: 'from-gray-500 to-gray-800', category: 'frontend' },
@@ -60,7 +60,7 @@ const About = () => {
             title: 'Senior Fullstack Developer',
             company: 'Freelance & Contract',
             description: 'Leading development of complex web applications and mentoring junior developers',
-            achievements: ['Built 15+ production applications', 'Improved performance by 40%', 'Implemented CI/CD pipelines']
+            achievements: ['Built 10+ production applications', 'Improved performance by 40%', 'Implemented CI/CD pipelines']
         },
         {
             year: '2024 - Present',
@@ -85,12 +85,6 @@ const About = () => {
             institution: 'Haramaya University',
             year: '2016 - 2021',
             description: 'Specialized in software engineering and web technologies'
-        },
-        {
-            degree: 'Fullstack Development Bootcamp',
-            institution: 'Tech Academy',
-            year: '2020',
-            description: 'Intensive training in modern web development'
         }
     ];
 
@@ -123,8 +117,8 @@ const About = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-900 to-black">
             {/* Hero Section */}
-            <section className="relative pt-20 pb-32 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-transparent to-blue-500/10" />
+            <section className="relative pt-32 pb-32 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-transparent to-blue-500/10 " />
                 <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto mb-16">
                         <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30">
@@ -375,7 +369,7 @@ const About = () => {
                         <div className="grid md:grid-cols-4 gap-6">
                             <div className="text-center p-4">
                                 <div className="text-3xl font-bold text-yellow-400 mb-2">Frontend</div>
-                                <p className="text-gray-400 text-sm">React, Next.js, Vue.js</p>
+                                <p className="text-gray-400 text-sm">React, Next.js, HTML5, CSS3</p>
                             </div>
                             <div className="text-center p-4">
                                 <div className="text-3xl font-bold text-yellow-400 mb-2">Backend</div>
@@ -489,7 +483,7 @@ const About = () => {
                                 <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6">
                                     <h3 className="text-xl font-semibold text-white mb-4">Development Tools</h3>
                                     <div className="flex flex-wrap gap-2">
-                                        {['VS Code', 'Git', 'Docker', 'Figma', 'Postman', 'Jira', 'AWS Console', 'Chrome DevTools'].map((tool, index) => (
+                                        {['VS Code', 'Git', 'Docker', 'Figma', 'Postman', 'Chrome DevTools'].map((tool, index) => (
                                             <span
                                                 key={index}
                                                 className="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm hover:bg-gray-800 transition-colors"
